@@ -12,10 +12,15 @@ export default {
         "./resources/js/**/*.vue",
         // "./app/Forms/*.php",
         // "./app/Tables/*.php",
+        "./node_modules/flowbite/**/*.js",
     ],
 
     theme: {
-        extend: {},
+        extend: {
+            colors: {
+                primary: {"50":"#ff0000","100":"#ea0000","200":"#d40000","300":"#c80000","400":"#b60000","500":"#c20000","600":"#ac0000","700":"#a80000","800":"#920404","900":"#900606","950":"#700101"}
+              }
+        },
     },
 
     plugins: [forms, typography],
