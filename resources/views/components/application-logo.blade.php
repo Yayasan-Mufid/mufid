@@ -1,0 +1,1 @@
+<img src="{{ url('/') }}/aset/img/m-logo.png" width="40" alt="Logo M Mufid">
