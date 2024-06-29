@@ -4,7 +4,8 @@
             {{ $logo }}
         @else
             <Link href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                {{-- <x-application-logo class="w-20 h-20 fill-current text-gray-500" /> --}}
+                <img src="{{ url('/') }}/aset/img/mufid-logo.svg" width="140" alt="Logo M Mufid">
             </Link>
         @endisset
     </div>
