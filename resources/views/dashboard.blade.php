@@ -4,67 +4,11 @@
             {{ __('Dashboard') }}
         </h2>
     </x-slot> --}}
-
-    <div class="pt-6">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div id="default-carousel" class="relative w-full" data-carousel="slide">
-                <!-- Carousel wrapper -->
-                <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-                    <!-- Item 1 -->
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <img src="https://mufid.or.id/wp-content/uploads/2020/12/banner-angkatan-2.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-                    </div>
-                    <!-- Item 2 -->
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <img src="https://mufid.or.id/wp-content/uploads/2023/06/BANNER-WEB-ADHA.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-                    </div>
-                    <!-- Item 3 -->
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <img src="https://mufid.or.id/wp-content/uploads/2024/06/WhatsApp-Image-2024-06-21-at-11.02.47-1024x1024.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-                    </div>
-                    <!-- Item 4 -->
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <img src="https://mufid.or.id/wp-content/uploads/2020/04/2.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-                    </div>
-                    <!-- Item 5 -->
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <img src="https://mufid.or.id/wp-content/uploads/2020/04/3.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-                    </div>
-                </div>
-                <!-- Slider indicators -->
-                <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-                    <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
-                </div>
-                <!-- Slider controls -->
-                <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
-                        </svg>
-                        <span class="sr-only">Previous</span>
-                    </span>
-                </button>
-                <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-                        </svg>
-                        <span class="sr-only">Next</span>
-                    </span>
-                </button>
-            </div>
-
-        </div>
-    </div>
     
     <div class="py-6">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="flex md:flex-row flex-col">
-                <div class="md:basis-1/4 p-6 bg-white border-b border-gray-200 rounded-lg md:mr-4 md:mb-0 mb-4">
+                <div class="md:basis-1/4 p-6 bg-white border-b border-gray-200 rounded-lg hidden md:block md:mr-4 md:mb-0 mb-4">
                     <ul class="list-none p-0">
                         <li class="border-b border-gray-200 hover:bg-gray-100">
                             <a href="#" class="flex items-center space-x-4 p-4 block">
@@ -99,6 +43,20 @@
                     </ul>
                 </div>
                 <div class="md:basis-3/4 p-6 bg-white border-b border-gray-200 rounded-lg">
+                    <div class="flow-root pb-6">
+                        <div class="mx-auto">
+                            @php
+                                $slides = [
+                                    ['url' => 'https://mufid.or.id/wp-content/uploads/2020/12/banner-angkatan-2.jpg', 'link' => 'https://mufid.or.id/wp-content/uploads/2020/12/banner-angkatan-2.jpg'],
+                                    ['url' => 'https://mufid.or.id/wp-content/uploads/2023/06/BANNER-WEB-ADHA.png', 'link' => '#'],
+                                    ['url' => 'https://mufid.or.id/wp-content/uploads/2024/06/WhatsApp-Image-2024-06-21-at-11.02.47-1024x1024.jpeg', 'link' => '#'],
+                                    ['url' => 'https://mufid.or.id/wp-content/uploads/2020/04/3.jpg', 'link' => '#'],
+                                    ['url' => 'https://mufid.or.id/wp-content/uploads/2020/04/2.jpg', 'link' => '#']
+                                ];
+                            @endphp
+                            <CarouselSlider :initial-slides="{{ json_encode($slides) }}" />
+                        </div>
+                    </div>
                     <div class="flow-root">
                         <h3 class="text-xl font-semibold dark:text-white">Akses</h3>
                         <hr>
@@ -116,8 +74,8 @@
                                             Mufid Islam Academy
                                         </span>
                                     </div>
-                                    <div class="md:inline-flex items-center">
-                                        <a href="#" class="px-3 py-2 mb-3 mr-3 text-sm font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+                                    <div class="md:inline-flex items-center mt-2">
+                                        <a href="#" class="px-3 py-2 mr-3 text-sm font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
                                             Masuk
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-4 h-4 w-4 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -150,7 +108,7 @@
                                         </span>
                                     </div>
                                     <div class="inline-flex items-center">
-                                        <a href="#" class="px-3 py-2 mb-3 mr-3 text-sm font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+                                        <a href="#" class="px-3 py-2 mr-3 text-sm font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
                                             Masuk
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-4 h-4 w-4 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -166,14 +124,14 @@
                                     </div>
                                     <div class="flex-1 min-w-0">
                                         <span class="block text-base font-semibold text-gray-900 truncate dark:text-white">
-                                            Peserta Angkatan 6
+                                            Peserta
                                         </span>
                                         <span class="block text-sm font-normal text-gray-500 truncate dark:text-gray-400">
                                             Mufid Islam Academy
                                         </span>
                                     </div>
                                     <div class="inline-flex items-center">
-                                        <a href="#" class="px-3 py-2 mb-3 mr-3 text-sm font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+                                        <a href="#" class="px-3 py-2 mr-3 text-sm font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
                                             Masuk 
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-4 h-4 w-4 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -207,5 +165,39 @@
             </div>
         </div>
     </div>
-
+    
+    <!-- Sticky Navbar -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg md:hidden">
+        <div class="flex justify-around">
+            <!-- Dashboard Button -->
+            <a href="#" class="flex flex-col items-center justify-center p-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600">
+                <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7m-9-7v18"></path>
+                </svg>
+                <span class="text-md">Dashboard</span>
+            </a>
+            <!-- Data Button -->
+            <a href="#" class="flex flex-col items-center justify-center p-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600">
+                <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
+                </svg>
+                <span class="text-md">Data</span>
+            </a>
+            <!-- Informasi Button -->
+            <a href="#" class="flex flex-col items-center justify-center p-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600">
+                <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M12 12h0m-6 6v-2a4 4 0 118 0v2"></path>
+                </svg>
+                <span class="text-md">Informasi</span>
+            </a>
+            <!-- Akun Button -->
+            <a href="#" class="flex flex-col items-center justify-center p-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600">
+                <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A5.978 5.978 0 0112 15a5.978 5.978 0 016.879 2.804M12 12a5 5 0 110-10 5 5 0 010 10z"></path>
+                </svg>
+                <span class="text-md">Akun</span>
+            </a>
+        </div>
+    </div>
+    
 </x-app-layout>
