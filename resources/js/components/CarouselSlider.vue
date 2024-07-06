@@ -6,8 +6,8 @@
           <img :src="slide.url" :alt="'Slide ' + (index + 1)" class="rounded-lg" />
         </a>
       </div>
-      <div class="carousel-indicators absolute inset-x-0 bottom-0 z-10">
-        <span v-for="(slide, index) in slides" :key="index" :class="{ 'active': currentIndex === index }"></span>
+      <div class="carousel-indicators absolute inset-x-0 bottom-0 z-10 flex justify-center space-x-2">
+        <span v-for="(slide, index) in slides" :key="index" :class="{ 'active': currentIndex === index }" class="dot-indicator"></span>
       </div>
     </div>
     <button class="carousel-control-prev" @click="prevSlide">‹</button>
@@ -27,8 +27,15 @@ export default {
   data() {
     return {
       slides: this.initialSlides,
-      currentIndex: 0
+      currentIndex: 0,
+      autoplayInterval: null
     }
+  },
+  mounted() {
+    this.autoplayInterval = setInterval(this.nextSlide, 5000)
+  },
+  beforeDestroy() {
+    clearInterval(this.autoplayInterval)
   },
   methods: {
     prevSlide() {
