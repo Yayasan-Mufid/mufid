@@ -4,7 +4,7 @@
             {{ __('Dashboard') }}
         </h2>
     </x-slot> --}}
-    
+
     <div class="py-6">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="flex md:flex-row flex-col">
@@ -12,9 +12,7 @@
                     <ul class="list-none p-0">
                         <li class="border-b border-gray-200 hover:bg-gray-100">
                             <a href="#" class="flex items-center space-x-4 p-4 block">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                                </svg>
+                                <x-carbon-dashboard class="w-6 h-6" />
                                 <div>
                                     <h6 class="text-sm font-semibold text-gray-900 dark:text-white">Dasboard</h6>
                                 </div>
@@ -22,37 +20,51 @@
                         </li>
                         <li class="border-b border-gray-200 hover:bg-gray-100">
                             <a href="#" class="flex items-center space-x-4 p-4 block">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
-                                </svg>
+                                <x-carbon-data-1 class="w-6 h-6"/>
                                 <div>
-                                    <h6 class="text-sm font-semibold text-gray-900 dark:text-white">Histori Pembayaran</h6>
+                                    <h6 class="text-sm font-semibold text-gray-900 dark:text-white">Data</h6>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="border-gray-200 hover:bg-gray-100">
+                            <a href="#" class="flex items-center space-x-4 p-4 block">
+                                <x-carbon-money class="w-6 h-6"/>
+                                <div>
+                                    <h6 class="text-sm font-semibold text-gray-900 dark:text-white">Riwayat Pembayaran</h6>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="py-5"></li>
+                        <li class="border-b border-gray-200 hover:bg-gray-100">
+                            <a href="#" class="flex items-center space-x-4 p-4 block">
+                                <x-carbon-user-profile class="w-6 h-6"/>
+                                <div>
+                                    <h6 class="text-sm font-semibold text-gray-900 dark:text-white">Akun</h6>
                                 </div>
                             </a>
                         </li>
                         <li class=" border-gray-200 hover:bg-gray-100">
                             <a href="#" class="flex items-center space-x-4 p-4 block">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                                </svg>
+                                <x-carbon-logout class="w-6 h-6" />
                                 <div>
-                                    <h6 class="text-sm font-semibold text-gray-900 dark:text-white">Pengaturan</h6>
+                                    <h6 class="text-sm font-semibold text-gray-900 dark:text-white">Logout</h6>
                                 </div>
                             </a>
                         </li>
                     </ul>
+
                 </div>
                 <div class="md:basis-3/4 p-6 bg-white border-b border-gray-200 rounded-lg">
                     <div class="flow-root pb-6">
                         <div class="mx-auto">
                             @php
-                                $slides = [
-                                    ['url' => 'https://mufid.or.id/wp-content/uploads/2020/12/banner-angkatan-2.jpg', 'link' => 'https://mufid.or.id/wp-content/uploads/2020/12/banner-angkatan-2.jpg'],
-                                    ['url' => 'https://mufid.or.id/wp-content/uploads/2023/06/BANNER-WEB-ADHA.png', 'link' => '#'],
-                                    ['url' => 'https://mufid.or.id/wp-content/uploads/2024/06/WhatsApp-Image-2024-06-21-at-11.02.47-1024x1024.jpeg', 'link' => '#'],
-                                    ['url' => 'https://mufid.or.id/wp-content/uploads/2020/04/3.jpg', 'link' => '#'],
-                                    ['url' => 'https://mufid.or.id/wp-content/uploads/2020/04/2.jpg', 'link' => '#']
-                                ];
+                            $slides = [
+                            ['url' => 'https://mufid.or.id/wp-content/uploads/2020/12/banner-angkatan-2.jpg', 'link' => 'https://mufid.or.id/wp-content/uploads/2020/12/banner-angkatan-2.jpg'],
+                            ['url' => 'https://mufid.or.id/wp-content/uploads/2023/06/BANNER-WEB-ADHA.png', 'link' => '#'],
+                            ['url' => 'https://mufid.or.id/wp-content/uploads/2024/06/WhatsApp-Image-2024-06-21-at-11.02.47-1024x1024.jpeg', 'link' => '#'],
+                            ['url' => 'https://mufid.or.id/wp-content/uploads/2020/04/3.jpg', 'link' => '#'],
+                            ['url' => 'https://mufid.or.id/wp-content/uploads/2020/04/2.jpg', 'link' => '#']
+                            ];
                             @endphp
                             <CarouselSlider :initial-slides="{{ json_encode($slides) }}" />
                         </div>
@@ -75,21 +87,11 @@
                                         </span>
                                     </div>
                                     <div class="md:inline-flex items-center mt-2">
-                                        <a href="#" class="px-3 py-2 mr-3 text-sm font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
-                                            Masuk
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-4 h-4 w-4 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <a href="#" class="px-3 pt-2 pb-3 mr-3 text-sm font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+                                            <span class="hidden md:inline">Masuk</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="md:ml-4 ml-0 h-4 w-4 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                            </svg> 
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="flex flex-row-reverse md:hidden">
-                                    <div class="inline-flex items-center mt-2">
-                                        <a href="#" class="px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
-                                            Masuk
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-4 h-4 w-4 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                            </svg> 
+                                            </svg>
                                         </a>
                                     </div>
                                 </div>
@@ -107,12 +109,12 @@
                                             Mufid Islam Academy
                                         </span>
                                     </div>
-                                    <div class="inline-flex items-center">
-                                        <a href="#" class="px-3 py-2 mr-3 text-sm font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
-                                            Masuk
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-4 h-4 w-4 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <div class="md:inline-flex items-center mt-2">
+                                        <a href="#" class="px-3 pt-2 pb-3 mr-3 text-sm font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+                                            <span class="hidden md:inline">Masuk</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="md:ml-4 ml-0 h-4 w-4 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                            </svg> 
+                                            </svg>
                                         </a>
                                     </div>
                                 </div>
@@ -130,17 +132,17 @@
                                             Mufid Islam Academy
                                         </span>
                                     </div>
-                                    <div class="inline-flex items-center">
-                                        <a href="#" class="px-3 py-2 mr-3 text-sm font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
-                                            Masuk 
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-4 h-4 w-4 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <div class="md:inline-flex items-center mt-2">
+                                        <a href="#" class="px-3 pt-2 pb-3 mr-3 text-sm font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+                                            <span class="hidden md:inline">Masuk</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="md:ml-4 ml-0 h-4 w-4 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                             </svg>
                                         </a>
                                     </div>
                                 </div>
                             </li>
-                            
+
                             {{-- <li class="py-4">
                                 <div class="flex items-center space-x-4">
                                     <div class="flex-shrink-0">
@@ -165,39 +167,57 @@
             </div>
         </div>
     </div>
-    
+    <div class="">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <footer class="bg-white rounded-lg shadow dark:bg-gray-800">
+                <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+                    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© {{ date('Y') }} <a href="#" class="hover:underline">Mufid</a>. All Rights Reserved.
+                    </span>
+                    <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-900 dark:text-gray-400 sm:mt-0">
+                        <li>
+                            <a href="#" class="hover:underline me-4 md:me-6">About</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:underline me-4 md:me-6">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:underline">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+    </div>
+
     <!-- Sticky Navbar -->
     <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg md:hidden">
         <div class="flex justify-around">
             <!-- Dashboard Button -->
-            <a href="#" class="flex flex-col items-center justify-center p-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600">
-                <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7m-9-7v18"></path>
-                </svg>
+            <a href="#" class="flex flex-col items-center justify-center p-2 pt-3 text-gray-600 hover:bg-gray-100 hover:text-primary-600">
+                <x-carbon-dashboard class="w-6 h-6 mb-1" />
                 <span class="text-md">Dashboard</span>
             </a>
             <!-- Data Button -->
-            <a href="#" class="flex flex-col items-center justify-center p-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600">
-                <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
-                </svg>
+            <a href="#" class="flex flex-col items-center justify-center p-2 pt-3 text-gray-600 hover:bg-gray-100 hover:text-primary-600">
+                <x-carbon-data-1 class="w-6 h-6 mb-1"/>
                 <span class="text-md">Data</span>
             </a>
             <!-- Informasi Button -->
-            <a href="#" class="flex flex-col items-center justify-center p-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600">
-                <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M12 12h0m-6 6v-2a4 4 0 118 0v2"></path>
-                </svg>
-                <span class="text-md">Informasi</span>
+            <a href="#" class="flex flex-col items-center justify-center p-2 pt-3 text-gray-600 hover:bg-gray-100 hover:text-primary-600">
+                <x-carbon-money class="w-6 h-6 mb-1"/>
+                <span class="text-md">Pembayaran</span>
             </a>
             <!-- Akun Button -->
-            <a href="#" class="flex flex-col items-center justify-center p-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600">
-                <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A5.978 5.978 0 0112 15a5.978 5.978 0 016.879 2.804M12 12a5 5 0 110-10 5 5 0 010 10z"></path>
-                </svg>
+            <a href="#" class="flex flex-col items-center justify-center p-2 pt-3 text-gray-600 hover:bg-gray-100 hover:text-primary-600">
+                <x-carbon-user-profile class="w-6 h-6 mb-1"/>
                 <span class="text-md">Akun</span>
             </a>
         </div>
     </div>
-    
+
+    <div class="py-4"></div>
+
 </x-app-layout>

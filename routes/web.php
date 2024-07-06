@@ -35,7 +35,23 @@ Route::middleware('splade')->group(function () {
         Route::get('/dashboard', function () {
             return view('dashboard');
         })->middleware(['verified'])->name('dashboard');
-        
+
+        Route::get('/kelas', function () {
+          return view('dashboard.peserta.kelas');
+        });
+
+        Route::get('/buat-materi', function () {
+          return view('dashboard.pengajar.materi');
+        });
+
+        Route::get('/program-pendidikan', function () {
+          return view('pages.program-pendidikan');
+        })->name('program.pendidikan');
+
+        Route::get('/informasi', function () {
+          return view('pages.informasi');
+        })->name('informasi');
+
 
         Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
         Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
