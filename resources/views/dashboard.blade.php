@@ -8,53 +8,10 @@
     <div class="py-6">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="flex md:flex-row flex-col">
-                <div class="md:basis-1/4 p-6 bg-white border-b border-gray-200 rounded-lg hidden md:block md:mr-4 md:mb-0 mb-4">
-                    <ul class="list-none p-0">
-                        <li class="border-b border-gray-200 hover:bg-gray-100">
-                            <a href="#" class="flex items-center space-x-4 p-4 block">
-                                <x-carbon-dashboard class="w-6 h-6" />
-                                <div>
-                                    <h6 class="text-sm font-semibold text-gray-900 dark:text-white">Dasboard</h6>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="border-b border-gray-200 hover:bg-gray-100">
-                            <a href="#" class="flex items-center space-x-4 p-4 block">
-                                <x-carbon-data-1 class="w-6 h-6"/>
-                                <div>
-                                    <h6 class="text-sm font-semibold text-gray-900 dark:text-white">Data</h6>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="border-gray-200 hover:bg-gray-100">
-                            <a href="#" class="flex items-center space-x-4 p-4 block">
-                                <x-carbon-money class="w-6 h-6"/>
-                                <div>
-                                    <h6 class="text-sm font-semibold text-gray-900 dark:text-white">Riwayat Pembayaran</h6>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="py-5"></li>
-                        <li class="border-b border-gray-200 hover:bg-gray-100">
-                            <a href="#" class="flex items-center space-x-4 p-4 block">
-                                <x-carbon-user-profile class="w-6 h-6"/>
-                                <div>
-                                    <h6 class="text-sm font-semibold text-gray-900 dark:text-white">Akun</h6>
-                                </div>
-                            </a>
-                        </li>
-                        <li class=" border-gray-200 hover:bg-gray-100">
-                            <a href="#" class="flex items-center space-x-4 p-4 block">
-                                <x-carbon-logout class="w-6 h-6" />
-                                <div>
-                                    <h6 class="text-sm font-semibold text-gray-900 dark:text-white">Logout</h6>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-
+                <div class="md:basis-1/4 border p-6 bg-white border-gray-200 rounded-xl hidden md:block md:mr-4 md:mb-0 mb-4">
+                    @include('components.menu-samping')
                 </div>
-                <div class="md:basis-3/4 p-6 bg-white border-b border-gray-200 rounded-lg">
+                <div class="md:basis-3/4 border p-6 bg-white border-gray-200 rounded-xl">
                     <div class="flow-root pb-6">
                         <div class="mx-auto">
                             @php
@@ -72,8 +29,8 @@
                     <div class="flow-root">
                         <h3 class="text-xl font-semibold dark:text-white">Akses</h3>
                         <hr>
-                        <ul class="divide-y divide-gray-200 dark:divide-gray-700">
-                            <li class="py-4 bg-slate-50 p-4 rounded-lg my-2">
+                        <ul class=" divide-gray-200 dark:divide-gray-700">
+                            <li class="bg-slate-50 p-3 rounded-xl border my-2">
                                 <div class="flex items-center space-x-4">
                                     <div class="flex-shrink-0">
                                         <img src="{{ url('/') }}/aset/img/logo-mia.png" width="40" alt="Logo M Mufid">
@@ -86,7 +43,7 @@
                                             Mufid Islam Academy
                                         </span>
                                     </div>
-                                    <div class="md:inline-flex items-center mt-2">
+                                    <div class="md:inline-flex items-center">
                                         <a href="#" class="px-3 pt-2 pb-3 mr-3 text-sm font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
                                             <span class="hidden md:inline">Masuk</span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="md:ml-4 ml-0 h-4 w-4 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -96,7 +53,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="py-4 bg-slate-50 p-4 rounded-lg my-2">
+                            <li class="bg-slate-50 p-3 rounded-xl border my-2">
                                 <div class="flex items-center space-x-4">
                                     <div class="flex-shrink-0">
                                         <img src="{{ url('/') }}/aset/img/logo-mia.png" width="40" alt="Logo M Mufid">
@@ -109,7 +66,7 @@
                                             Mufid Islam Academy
                                         </span>
                                     </div>
-                                    <div class="md:inline-flex items-center mt-2">
+                                    <div class="md:inline-flex items-center">
                                         <a href="#" class="px-3 pt-2 pb-3 mr-3 text-sm font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
                                             <span class="hidden md:inline">Masuk</span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="md:ml-4 ml-0 h-4 w-4 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -119,7 +76,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="py-4 bg-slate-50 p-4 rounded-lg my-2">
+                            <li class="bg-slate-50 p-3 rounded-xl border my-2">
                                 <div class="flex items-center space-x-4">
                                     <div class="flex-shrink-0">
                                         <img src="{{ url('/') }}/aset/img/logo-mia.png" width="40" alt="Logo M Mufid">
@@ -132,13 +89,13 @@
                                             Mufid Islam Academy
                                         </span>
                                     </div>
-                                    <div class="md:inline-flex items-center mt-2">
-                                        <a href="#" class="px-3 pt-2 pb-3 mr-3 text-sm font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+                                    <div class="md:inline-flex items-center">
+                                        <Link modal href="{{ route('list.peserta') }}" class="px-3 pt-2 pb-3 mr-3 text-sm font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
                                             <span class="hidden md:inline">Masuk</span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="md:ml-4 ml-0 h-4 w-4 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                             </svg>
-                                        </a>
+                                          </Link>
                                     </div>
                                 </div>
                             </li>
@@ -192,31 +149,7 @@
         </div>
     </div>
 
-    <!-- Sticky Navbar -->
-    <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg md:hidden">
-        <div class="flex justify-around">
-            <!-- Dashboard Button -->
-            <a href="#" class="flex flex-col items-center justify-center p-2 pt-3 text-gray-600 hover:bg-gray-100 hover:text-primary-600">
-                <x-carbon-dashboard class="w-6 h-6 mb-1" />
-                <span class="text-md">Dashboard</span>
-            </a>
-            <!-- Data Button -->
-            <a href="#" class="flex flex-col items-center justify-center p-2 pt-3 text-gray-600 hover:bg-gray-100 hover:text-primary-600">
-                <x-carbon-data-1 class="w-6 h-6 mb-1"/>
-                <span class="text-md">Data</span>
-            </a>
-            <!-- Informasi Button -->
-            <a href="#" class="flex flex-col items-center justify-center p-2 pt-3 text-gray-600 hover:bg-gray-100 hover:text-primary-600">
-                <x-carbon-money class="w-6 h-6 mb-1"/>
-                <span class="text-md">Pembayaran</span>
-            </a>
-            <!-- Akun Button -->
-            <a href="#" class="flex flex-col items-center justify-center p-2 pt-3 text-gray-600 hover:bg-gray-100 hover:text-primary-600">
-                <x-carbon-user-profile class="w-6 h-6 mb-1"/>
-                <span class="text-md">Akun</span>
-            </a>
-        </div>
-    </div>
+    @include('components.menu-mobile')
 
     <div class="py-4"></div>
 
