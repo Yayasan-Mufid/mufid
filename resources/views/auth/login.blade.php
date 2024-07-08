@@ -18,6 +18,12 @@
                 @endif
 
                 <x-splade-submit class="ml-3" :label="__('Log in')" />
+
+            </div>
+            <div class="flex items-center justify-end">
+              <Link class="text-sm text-primary-600 hover:text-gray-900 p-2 rounded-md border border-primary-400" href="{{ route('register') }}">
+                  Daftar Akun
+              </Link>
             </div>
             <div class="flex items-center justify-center max-w-full">
                 <button
