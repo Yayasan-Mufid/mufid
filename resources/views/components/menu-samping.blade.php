@@ -33,11 +33,14 @@
         </Link>
   </li>
   <li class="border-gray-200 hover:bg-gray-100">
-      <Link href="{{ route('logout') }}" class="flex items-center space-x-4 p-4 block {{ request()->routeIs('logout') ? 'bg-slate-50 text-primary-600' : '' }}">
-          <x-carbon-logout class="w-6 h-6 {{ request()->routeIs('logout') ? 'text-primary-600' : '' }}" />
-          <div>
-              <h6 class="text-sm font-semibold dark:text-white {{ request()->routeIs('logout') ? 'text-primary-600' : 'text-gray-900' }}">Logout</h6>
-          </div>
-        </Link>
+      <form method="POST" action="{{ route('logout') }}" class="flex items-center space-x-4 p-4 pl-0 block">
+          @csrf
+          <button type="submit" class="flex items-center space-x-4 w-full text-left {{ request()->routeIs('logout') ? 'bg-slate-50 text-primary-600' : '' }}">
+              <x-carbon-logout class="w-6 h-6 {{ request()->routeIs('logout') ? 'text-primary-600' : '' }}" />
+              <div>
+                  <h6 class="text-sm font-semibold dark:text-white {{ request()->routeIs('logout') ? 'text-primary-600' : 'text-gray-900' }}">Logout</h6>
+              </div>
+          </button>
+      </form>
   </li>
 </ul>
