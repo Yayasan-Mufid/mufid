@@ -8,7 +8,7 @@
 
             <div class="flex items-center justify-end">
                 <Link class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
+                    Login
                 </Link>
 
                 <x-splade-submit class="ml-4" :label="__('Register')" />
