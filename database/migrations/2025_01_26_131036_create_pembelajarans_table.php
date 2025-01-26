@@ -22,7 +22,7 @@ return new class extends Migration
             $table->decimal('harga', 10, 2)->default(0); // Harga kursus
             $table->decimal('diskon', 10, 2)->default(0); // Diskon (opsional)
             $table->decimal('harga_diskon', 10, 2)->storedAs('harga - diskon'); // Harga setelah diskon
-            $table->foreignId('pengajar_id')->constrained('pengajars')->onDelete('cascade'); // Relasi ke instruktur
+            $table->foreignId('pengajar_id')->nullable()->constrained('pengajars')->onDelete('cascade'); // Relasi ke instruktur
             $table->string('video_preview')->nullable(); // URL video preview
             $table->integer('durasi_total')->nullable(); // Total durasi kursus (dalam menit)
             $table->dateTime('jadwal_mulai')->nullable(); // Jadwal mulai kursus
@@ -31,6 +31,7 @@ return new class extends Migration
             $table->string('bahasa', 50)->default('Indonesia'); // Bahasa pengantar
             $table->enum('status', ['draft', 'aktif', 'nonaktif'])->default('draft'); // Status kursus
             $table->dateTime('publikasi')->nullable(); // Tanggal publikasi
+            $table->string('total_waktu_belajar')->nullable();
             $table->json('meta')->nullable(); // Metadata untuk SEO
             $table->json('tag')->nullable(); // Tag atau label (disimpan dalam JSON)
             $table->json('data')->nullable(); // Detail Tambahan

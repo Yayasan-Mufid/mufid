@@ -21,6 +21,7 @@ class Modul extends Model
       'thumbnail',
       'urutan',
       'pembelajaran_id',
+      'total_waktu_belajar',
     ];
 
     /**

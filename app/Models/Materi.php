@@ -22,6 +22,7 @@ class Materi extends Model
       'data',
       'thumbnail',
       'urutan',
+      'total_waktu_belajar',
     ];
 
     /**

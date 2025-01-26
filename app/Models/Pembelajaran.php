@@ -31,6 +31,7 @@ class Pembelajaran extends Model
       'tag',
       'data',
       'galeri',
+      'total_waktu_belajar',
     ];
 
     /**

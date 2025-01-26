@@ -22,6 +22,7 @@ return new class extends Migration
             $table->timestamp('batas_mulai')->nullable();
             $table->timestamp('batas_akhir')->nullable();
             $table->string('thumbnail')->nullable();
+            $table->string('total_waktu_belajar')->nullable();
             $table->integer('urutan')->nullable();
             $table->text('keterangan')->nullable();
             $table->json('data')->nullable(); // data dinamis
