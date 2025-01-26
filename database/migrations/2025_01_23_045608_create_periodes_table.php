@@ -28,6 +28,7 @@ return new class extends Migration
             $table->json('notifikasi')->nullable();
             $table->boolean('aktifkan_pendaftaran')->default(1);
             $table->date('tanggal_tagihan')->nullable();
+            $table->json('data')->nullable();
             $table->foreign('unit_id')->references('id')->on('units')->onDelete('cascade');
             $table->timestamps();
         });

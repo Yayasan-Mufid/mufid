@@ -15,11 +15,14 @@ return new class extends Migration
             $table->id();
             $table->uuid('uuid');
             $table->foreignId('jadwal_id')->nullable()->constrained()->onDelete('cascade');
+            $table->foreignId('pembelajaran_id')->nullable()->constrained()->onDelete('cascade');
             $table->string('nama');
             $table->string('slug')->unique();
             $table->string('status')->default('publish'); // publish, draft;
             $table->timestamp('batas_mulai')->nullable();
             $table->timestamp('batas_akhir')->nullable();
+            $table->string('thumbnail')->nullable();
+            $table->integer('urutan')->nullable();
             $table->text('keterangan')->nullable();
             $table->json('data')->nullable(); // data dinamis
             $table->timestamps();

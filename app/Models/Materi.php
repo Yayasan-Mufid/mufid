@@ -20,6 +20,8 @@ class Materi extends Model
       'batas_akhir',
       'keterangan',
       'data',
+      'thumbnail',
+      'urutan',
     ];
 
     /**

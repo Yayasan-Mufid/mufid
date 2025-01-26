@@ -11,17 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('units', function (Blueprint $table) {
+        Schema::create('pembelajaran_kategoris', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('divisi_id')->nullable();
             $table->string('nama');
             $table->string('slug')->unique();
-            $table->string('kategori')->nullable(); // kelas online, kelas offline
             $table->text('keterangan')->nullable();
+            $table->string('status')->default('aktif');
             $table->string('thumbnail')->nullable();
             $table->integer('urutan')->nullable();
-            $table->json('data')->nullable();
-            $table->foreign('divisi_id')->nullable()->references('id')->on('divisis')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('units');
+        Schema::dropIfExists('pembelajaran_kategoris');
     }
 };

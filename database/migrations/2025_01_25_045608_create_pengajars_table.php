@@ -20,6 +20,7 @@ return new class extends Migration
             $table->date('tanggal_masuk')->nullable();
             $table->string('kode_nama_pengajar')->nullable();
             $table->json('data')->nullable();
+            $table->string('foto')->nullable();
             $table->boolean('status_aktif')->default(1);
             $table->timestamps();
         });

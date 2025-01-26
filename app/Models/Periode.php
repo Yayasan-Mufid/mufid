@@ -25,6 +25,7 @@ class Periode extends Model
         'notifikasi',
         'aktifkan_pendaftaran',
         'tanggal_tagihan',
+        'data',
     ];
 
     public function unit()

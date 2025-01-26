@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->string('slug')->unique();
+            $table->string('thumbnail')->nullable();
+            $table->integer('urutan')->nullable();
             $table->text('keterangan')->nullable();
             $table->timestamps();
         });

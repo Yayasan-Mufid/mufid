@@ -15,10 +15,11 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('unit_id')->nullable();
             $table->foreign('unit_id')->nullable()->references('id')->on('units')->onDelete('cascade');
-
             $table->string('nama');
             $table->string('slug')->unique();
             $table->text('keterangan')->nullable();
+            $table->string('thumbnail')->nullable();
+            $table->integer('urutan')->nullable();
             $table->json('data')->nullable();
             $table->timestamps();
         });

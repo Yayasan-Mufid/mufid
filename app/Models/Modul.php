@@ -18,6 +18,9 @@ class Modul extends Model
       'batas_akhir',
       'keterangan',
       'data',
+      'thumbnail',
+      'urutan',
+      'pembelajaran_id',
     ];
 
     /**

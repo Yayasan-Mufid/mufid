@@ -17,6 +17,7 @@ class Pengajar extends Model
         'kode_nama_pengajar',
         'data',
         'status_aktif',
+        'foto',
     ];
 
     public function user()

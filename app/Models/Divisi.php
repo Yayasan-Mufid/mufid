@@ -12,5 +12,7 @@ class Divisi extends Model
         'nama',
         'slug',
         'keterangan',
+        'thumbnail',
+        'urutan',
     ];
 }

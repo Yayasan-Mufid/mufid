@@ -15,6 +15,8 @@ class Level extends Model
         'slug',
         'keterangan',
         'data',
+        'urutan',
+        'thumbnail',
     ];
 
     public function unit()
