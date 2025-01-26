@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::create('units', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('divisi_id')->nullable();
             $table->string('nama');
             $table->string('slug')->unique();
             $table->string('kategori')->nullable(); // kelas online, kelas offline
             $table->text('keterangan')->nullable();
-            $table->foreign('divisi_id')->references('id')->on('divisis')->onDelete('cascade');
+            $table->foreign('divisi_id')->nullable()->references('id')->on('divisis')->onDelete('cascade');
             $table->timestamps();
         });
     }

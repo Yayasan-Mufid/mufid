@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('moduls', function (Blueprint $table) {
             $table->id();
             $table->uuid('uuid');
-            $table->foreignId('jadwal_id')->constrained()->onDelete('cascade');
+            $table->foreignId('jadwal_id')->nullable()->constrained()->onDelete('cascade');
             $table->string('nama');
             $table->string('slug')->unique();
             $table->string('status')->default('publish'); // publish, draft;

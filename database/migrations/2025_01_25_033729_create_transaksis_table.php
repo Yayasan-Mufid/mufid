@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('transaksis', function (Blueprint $table) {
             $table->id();
             $table->uuid('uuid');
-            $table->foreignId('periode_id')->constrained('periodes');
+            $table->foreignId('periode_id')->nullable()->constrained('periodes');
             $table->foreignId('peserta_id')->constrained('pesertas');
             $table->foreignId('user_id')->constrained('users');
             $table->tinyInteger('status')->default(1); // 1 Menunggu Pembayaran - 2 Menunggu Konfirmasi - 3 Lunas - 4 Kadaluarsa

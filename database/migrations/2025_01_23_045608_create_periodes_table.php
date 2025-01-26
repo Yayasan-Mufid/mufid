@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('periodes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('unit_id')->constrained();
+            $table->unsignedBigInteger('unit_id');
             $table->string('nama');
             $table->string('slug')->unique();
             $table->timestamp('waktu_start')->nullable();
@@ -28,6 +28,7 @@ return new class extends Migration
             $table->json('notifikasi')->nullable();
             $table->boolean('aktifkan_pendaftaran')->default(1);
             $table->date('tanggal_tagihan')->nullable();
+            $table->foreign('unit_id')->references('id')->on('units')->onDelete('cascade');
             $table->timestamps();
         });
     }

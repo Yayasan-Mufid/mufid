@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('levels', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('unit_id')->nullable();
+            $table->foreign('unit_id')->nullable()->references('id')->on('units')->onDelete('cascade');
+
             $table->string('nama');
             $table->string('slug')->unique();
             $table->text('keterangan')->nullable();

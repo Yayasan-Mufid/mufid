@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('materis', function (Blueprint $table) {
             $table->id();
             $table->uuid('uuid');
-            $table->foreignId('modul_id')->constrained()->onDelete('cascade');
+            $table->foreignId('modul_id')->nullable()->constrained()->onDelete('cascade');
             $table->string('judul');
             $table->string('slug')->unique();
             $table->enum('jenis', ['text', 'video', 'file', 'pertanyaan']);

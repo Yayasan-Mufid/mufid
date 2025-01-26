@@ -11,6 +11,7 @@ class Transaksi extends Model
     protected $fillable = [
       'uuid',
       'periode_id',
+      'jadwal_id',
       'peserta_id',
       'user_id',
       'status',
@@ -35,6 +36,11 @@ class Transaksi extends Model
     public function periode()
     {
         return $this->belongsTo(Periode::class);
+    }
+
+    public function jadwal()
+    {
+        return $this->belongsTo(Jadwal::class);
     }
 
     /**
