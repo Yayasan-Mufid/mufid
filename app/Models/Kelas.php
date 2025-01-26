@@ -22,6 +22,7 @@ class Kelas extends Model
       'data_jawaban',
       'status_penerimaan',
       'status_aktif',
+      'pembelajaran_id',
     ];
 
     /**

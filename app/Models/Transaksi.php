@@ -19,6 +19,7 @@ class Transaksi extends Model
       'nominal_total',
       'nominal_total_pembayaran',
       'detail_pembayaran',
+      'pembelajaran_id',
     ];
 
     /**

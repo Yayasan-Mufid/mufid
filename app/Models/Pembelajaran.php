@@ -18,6 +18,7 @@ class Pembelajaran extends Model
       'harga',
       'diskon',
       'pengajar_id',
+      'periode_id',
       'video_preview',
       'durasi_total',
       'jadwal_mulai',

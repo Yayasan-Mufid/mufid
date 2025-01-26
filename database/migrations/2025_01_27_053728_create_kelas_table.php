@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('peserta_id')->constrained('pesertas');
             $table->foreignId('periode_id')->nullable()->constrained('periodes');
             $table->foreignId('jadwal_id')->nullable()->constrained('jadwals');
+            $table->foreignId('pembelajaran_id')->nullable()->constrained()->onDelete('cascade');
             $table->string('nis_peserta')->unique()->nullable();
             $table->json('data')->nullable(); // data dinamis menyesuaikan kebutuhan
             $table->json('data_pembayaran')->nullable();

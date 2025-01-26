@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->uuid('uuid');
             $table->foreignId('periode_id')->nullable()->constrained('periodes');
+            $table->foreignId('pembelajaran_id')->nullable()->constrained()->onDelete('cascade');
             $table->foreignId('peserta_id')->constrained('pesertas');
             $table->foreignId('user_id')->constrained('users');
             $table->tinyInteger('status')->default(1); // 1 Menunggu Pembayaran - 2 Menunggu Konfirmasi - 3 Lunas - 4 Kadaluarsa

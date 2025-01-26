@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('slug')->unique(); // Slug untuk URL-friendly
             $table->text('deskripsi')->nullable(); // Deskripsi kursus
             $table->string('thumbnail')->nullable(); // URL gambar thumbnail
+            $table->foreignId('periode_id')->nullable()->constrained('periodes');
             $table->foreignId('pembelajaran_kategori_id')->nullable()->constrained('pembelajaran_kategoris')->onDelete('set null'); // Relasi ke kategori
             $table->decimal('harga', 10, 2)->default(0); // Harga kursus
             $table->decimal('diskon', 10, 2)->default(0); // Diskon (opsional)
