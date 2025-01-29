@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\MIA\DaftarController as MIADaftarController;
+use App\Http\Controllers\Payment\InvoiceController;
+use App\Http\Controllers\Dashboard\DashboardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('php', function ()  {
+  phpinfo();
+});
 
 Route::middleware('splade')->group(function () {
     // Registers routes to support the interactive components...
@@ -32,9 +38,7 @@ Route::middleware('splade')->group(function () {
     });
 
     Route::middleware('auth')->group(function () {
-        Route::get('/dashboard', function () {
-            return view('dashboard');
-        })->middleware(['verified'])->name('dashboard');
+        Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
         Route::get('/data', function () {
             return view('dashboard.peserta.data');
@@ -87,4 +91,30 @@ Route::middleware('splade')->group(function () {
     });
 
     require __DIR__.'/auth.php';
+
+
+
+    Route::prefix('mia')->middleware('auth')->group(function () {
+        Route::get('/daftar', [MIADaftarController::class, 'index'])->name('mia.daftar');
+        Route::post('/daftar', [MIADaftarController::class, 'store'])->name('mia.store');
+    });
+
+    Route::get('/invoice/{uuid}', [InvoiceController::class, 'index'])->name('invoice.index');
+
+    // Route::group(['prefix' => 'super-admin'], function () {
+    //     require __DIR__.'/sub/super-admin.php';
+    // });
+
+    Route::group(['prefix' => 'dashboard'], function () {
+        // require __DIR__.'/sub/ketua-divisi.php';
+        // require __DIR__.'/sub/ketua-unit.php';
+        require __DIR__.'/sub/admin.php';
+        require __DIR__.'/sub/pengajar.php';
+        // require __DIR__.'/sub/penguji.php';
+        // require __DIR__.'/sub/peserta.php';
+        // require __DIR__.'/sub/kasir.php';
+        // require __DIR__.'/sub/keuangan.php';
+        // require __DIR__.'/sub/pimpinan.php';
+    });
+
 });
