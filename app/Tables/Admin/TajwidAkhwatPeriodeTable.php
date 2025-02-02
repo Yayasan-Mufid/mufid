@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use ProtoneMedia\Splade\AbstractTable;
 use ProtoneMedia\Splade\SpladeTable;
 
-class MiaPeriodeTable extends AbstractTable
+class TajwidAkhwatPeriodeTable extends AbstractTable
 {
     /**
      * Create a new instance.
@@ -36,7 +36,7 @@ class MiaPeriodeTable extends AbstractTable
      */
     public function for()
     {
-        return Periode::where('unit_id', 1)->orderBy('created_at', 'desc');
+        return Periode::where('unit_id', 3)->orderBy('created_at', 'desc');
     }
 
     /**
@@ -48,26 +48,26 @@ class MiaPeriodeTable extends AbstractTable
     public function configure(SpladeTable $table)
     {
         $table
-            ->withGlobalSearch(columns: ['nama'])
-            ->rowLink(fn (Periode $periode) => route('admin.periode.show', ['unit' => 'mia', 'periode' => $periode->id],$periode))
-            ->column('id', sortable: true)
-            ->column('nama')
-            ->column('tahun_ajaran')
-            ->column(
-                label:'Buka Pendaftaran',
-                key:'waktu_start'
-            )
-            ->column(
-                    label:'Tutup Pendaftaran',
-                    key:'waktu_end'
-            )
+        ->withGlobalSearch(columns: ['nama'])
+        ->rowLink(fn (Periode $periode) => route('admin.periode.show', ['unit' => 'mia', 'periode' => $periode->id],$periode))
+        ->column('id', sortable: true)
+        ->column('nama')
+        ->column('tahun_ajaran')
+        ->column(
+            label:'Buka Pendaftaran',
+            key:'waktu_start'
+        )
+        ->column(
+                label:'Tutup Pendaftaran',
+                key:'waktu_end'
+        )
 
-            // ->searchInput()
-            // ->selectFilter()
-            // ->withGlobalSearch()
+        // ->searchInput()
+        // ->selectFilter()
+        // ->withGlobalSearch()
 
-            // ->bulkAction()
-            // ->export()
-            ->paginate(10);
+        // ->bulkAction()
+        // ->export()
+        ->paginate(10);
     }
 }
