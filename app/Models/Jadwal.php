@@ -12,7 +12,7 @@ class Jadwal extends Model
     protected $fillable = [
         'periode_id',
         'slug',
-        'nip_pengajar',
+        'pengajar_id',
         'jadwal_belajar',
         'nama_jadwal',
         'jenis_peserta',

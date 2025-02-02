@@ -15,6 +15,7 @@ class Pengajar extends Model
         'slug',
         'tanggal_masuk',
         'kode_nama_pengajar',
+        'nip_pengajar',
         'data',
         'status_aktif',
         'foto',
