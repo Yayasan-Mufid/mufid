@@ -18,4 +18,13 @@ class DashboardController extends Controller
         }
         return view('dashboard', compact('roles', 'roleuser'));
     }
+
+    public function akses()
+    {
+        $roles = Role::all();
+        foreach (auth()->user()->roles as  $item) {
+            $roleuser[] = RoleToUnit::getByRole($item->name);
+        }
+        return view('pages.akses', compact('roles', 'roleuser'));
+    }
 }

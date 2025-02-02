@@ -39,6 +39,7 @@ Route::middleware('splade')->group(function () {
 
     Route::middleware('auth')->group(function () {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+        Route::get('/akses', [DashboardController::class, 'akses'])->name('akses');
 
         Route::get('/data', function () {
             return view('dashboard.peserta.data');
@@ -46,7 +47,7 @@ Route::middleware('splade')->group(function () {
 
         Route::get('/pembayaran', function () {
           return view('dashboard.peserta.pembayaran');
-      })->middleware(['verified'])->name('pembayaran');
+        })->middleware(['verified'])->name('pembayaran');
 
         Route::get('/kelas', function () {
           return view('dashboard.peserta.kelas');
