@@ -3,6 +3,8 @@
 namespace App\View\Components;
 
 use Illuminate\View\Component;
+use Spatie\Permission\Models\Role;
+use App\Models\RoleToUnit;
 
 class AppLayout extends Component
 {
@@ -13,6 +15,10 @@ class AppLayout extends Component
      */
     public function render()
     {
-        return view('layouts.app');
+        $roles = Role::all();
+        foreach (auth()->user()->roles as  $item) {
+            $roleuser[] = RoleToUnit::getByRole($item->name);
+        }
+        return view('layouts.app', compact('roles', 'roleuser'));
     }
 }

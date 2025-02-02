@@ -6,6 +6,9 @@ use App\Http\Requests\ProfileUpdateRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use Spatie\Permission\Models\Role;
+use App\Models\RoleToUnit;
+
 
 class ProfileController extends Controller
 {
@@ -16,9 +19,14 @@ class ProfileController extends Controller
      */
     public function edit(Request $request)
     {
+        $roles = Role::all();
+        foreach (auth()->user()->roles as  $item) {
+            $roleuser[] = RoleToUnit::getByRole($item->name);
+        }
+
         return view('profile.edit', [
             'user' => $request->user(),
-        ]);
+        ], compact('roles', 'roleuser'));
     }
 
     /**

@@ -16,8 +16,14 @@
           <x-carbon-money class="w-6 h-6 mb-1 {{ request()->routeIs('pembayaran') ? 'text-primary-600' : '' }}"/>
           <span class="text-md">Pembayaran</span>
       </Link>
+      @hasanyrole($roles)
+      <Link href="{{ route('akses') }}" class="flex flex-col items-center justify-center p-2 pt-3 {{ request()->routeIs('akses') ? 'text-primary-600' : 'text-gray-600' }} hover:bg-gray-100 hover:text-primary-600">
+            <x-carbon-image-store-local class="w-6 h-6 mb-1 {{ request()->routeIs('akses') ? 'text-primary-600' : '' }}"/>
+            <span class="text-md">Akses</span>
+        </Link>
+    @endhasanyrole
       <!-- Akun Button -->
-      <Link href="{{ route('profile.edit') }}" class="flex flex-col items-center justify-center p-2 pt-3 {{ request()->routeIs('profile.edit') ? 'text-primary-600' : 'text-gray-600' }} hover:bg-gray-100 hover:text-primary-600">
+      <Link href="{{ route('profile.edit') }}" class="flex flex-col it>ems-center justify-center p-2 pt-3 {{ request()->routeIs('profile.edit') ? 'text-primary-600' : 'text-gray-600' }} hover:bg-gray-100 hover:text-primary-600">
           <x-carbon-user-profile class="w-6 h-6 mb-1 {{ request()->routeIs('profile.edit') ? 'text-primary-600' : '' }}"/>
           <span class="text-md">Akun</span>
       </Link>
