@@ -14,11 +14,13 @@ return new class extends Migration
         Schema::create('pengajars', function (Blueprint $table) {
             $table->id();
             $table->foreignId('periode_id')->nullable()->constrained('periodes');
+            $table->foreignId('unit_id')->nullable()->constrained('units');
             $table->foreignId('user_id')->constrained();
             $table->string('kode_pengajar')->unique();
             $table->string('slug')->unique();
             $table->date('tanggal_masuk')->nullable();
             $table->string('kode_nama_pengajar')->nullable();
+            $table->string('nip_pengajar')->nullable();
             $table->json('data')->nullable();
             $table->string('foto')->nullable();
             $table->boolean('status_aktif')->default(1);

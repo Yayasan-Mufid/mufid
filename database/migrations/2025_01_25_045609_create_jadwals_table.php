@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('periode_id')->nullable()->constrained('periodes')->nullOnDelete();
             $table->string('slug')->unique();
-            $table->string('nip_pengajar')->nullable();
+            $table->foreignId('pengajar_id')->nullable()->constrained('pengajars');
             $table->string('jadwal_belajar')->nullable();
             $table->string('nama_jadwal')->nullable();
             $table->string('jenis_peserta')->nullable();

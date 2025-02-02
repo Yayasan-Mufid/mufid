@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('unit_id')->nullable();
             $table->foreign('unit_id')->nullable()->references('id')->on('units')->onDelete('cascade');
             $table->string('nama');
-            $table->string('slug')->unique();
+            $table->string('slug')->nullable();
             $table->text('keterangan')->nullable();
             $table->string('thumbnail')->nullable();
             $table->integer('urutan')->nullable();

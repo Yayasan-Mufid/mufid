@@ -45,16 +45,15 @@ class MiaSeeder extends Seeder
         Periode::create([
           'id' => 1,
           'unit_id' => 1,
-          'nama' => 'Angkatan 7',
-          'slug' => 'angkatan-7',
+          'nama' => 'MIA Angkatan 7',
+          'slug' => 'mia-angkatan-7',
           'tahun_ajaran' => '2025',
-          'angkatan' => '7',
+          'angkatan' => 7,
           'aktifkan_pendaftaran' => true,
         ]);
 
         for ($i = 1; $i <= 12; $i++) {
             Level::create([
-                'id' => $i,
                 'unit_id' => 1,
                 'nama' => (string)$i,
                 'slug' => (string)$i,

@@ -16,9 +16,9 @@ class SuperAdminSeeder extends Seeder
      */
     public function run(): void
     {
-      Role::create(['name' => 'super-admin']);
+        Role::create(['name' => 'super-admin']);
 
-      $user = User::create(
+        $user = User::create(
         [
             'id'                   => 25,
             'name'                 => 'Super Admin',
@@ -29,9 +29,14 @@ class SuperAdminSeeder extends Seeder
             'code_access_max_date' => Carbon::now()->addHour(),
             'password'             => bcrypt('qweqweqwe'),
         ],
-      );
+        );
 
-      $user->assignRole('super-admin');
-      $user->assignRole('mia-admin');
+        $user->assignRole('super-admin');
+        $user->assignRole('mia-admin');
+        $user->assignRole('mia-pengajar');
+        $user->assignRole('tajwid-ikhwan-admin');
+        $user->assignRole('tajwid-ikhwan-pengajar');
+        $user->assignRole('tajwid-akhwat-admin');
+        $user->assignRole('tajwid-akhwat-pengajar');
     }
 }
