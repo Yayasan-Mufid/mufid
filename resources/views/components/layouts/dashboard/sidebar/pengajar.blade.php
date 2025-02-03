@@ -2,14 +2,6 @@
 
 <ul class="pb-2 space-y-2">
     <li>
-        <Link href="/dashboard"
-            class="flex items-center p-2 text-base text-gray-900 rounded-lg hover:bg-gray-100 group hover:border hover:border-gray-500 border border-transparent">
-        @svg('carbon-arrow-left', 'text-gray-600 h-6 w-6')
-        <span class="ml-3">Kembali</span>
-        </Link>
-    </li>
-    <li class="pt-4 border-gray-200 border-t space-y-2"></li>
-    <li>
         <x-link-item :href="route('pengajar.dashboard', ['unit' => $unit])" :active="request()->routeIs('pengajar.dashboard', ['unit' => $unit])">
             @svg('carbon-dashboard', 'text-gray-600 h-6 w-6')
             <span class="ml-3">Dashboard</span>
@@ -22,24 +14,21 @@
         <span class="ml-3">Pemberitahuan</span>
         </Link>
     </li> --}}
-    <li>
-        <x-link-item :href="route('pengajar.pembelajaran.index', ['unit' => $unit])" :active="request()->routeIs('pengajar.pembelajaran.index', ['unit' => $unit])">
-            @svg('carbon-data-center', 'text-gray-600 h-6 w-6')
-            <span class="ml-3">Pembelajaran</span>
-        </x-link-item>
-    </li>
-    <li>
-        <x-link-item :href="route('pengajar.pengajar.index', ['unit' => $unit])" :active="request()->routeIs('pengajar.pengajar.index', ['unit' => $unit])">
-            @svg('carbon-user-identification', 'text-gray-600 h-6 w-6')
-            <span class="ml-3">Pengajar</span>
-        </x-link-item>
-    </li>
-    {{-- <li>
-        <x-link-item :href="route('pengajar.jadwal.index', ['unit' => $unit])" :active="request()->routeIs('pengajar.jadwal.index', ['unit' => $unit])">
-            @svg('carbon-table-alias', 'text-gray-600 h-6 w-6')
-            <span class="ml-3">Jadwal</span>
-        </x-link-item>
-    </li> --}}
+    @if ($unit == 'mia')
+        <li>
+            <x-link-item :href="route('pengajar.pembelajaran.index', ['unit' => $unit])" :active="request()->routeIs('pengajar.pembelajaran.index', ['unit' => $unit])">
+                @svg('carbon-data-center', 'text-gray-600 h-6 w-6')
+                <span class="ml-3">Pembelajaran</span>
+            </x-link-item>
+        </li>
+    @else
+        <li>
+            <x-link-item :href="route('pengajar.jadwal.index', ['unit' => $unit])" :active="request()->routeIs('pengajar.jadwal.index', ['unit' => $unit])">
+                @svg('carbon-calendar', 'text-gray-600 h-6 w-6')
+                <span class="ml-3">Jadwal</span>
+            </x-link-item>
+        </li>
+    @endif
     <li>
         <x-link-item :href="route('pengajar.peserta.index', ['unit' => $unit])" :active="request()->routeIs('pengajar.peserta.index', ['unit' => $unit])">
             @svg('carbon-events-alt', 'text-gray-600 h-6 w-6')
@@ -58,10 +47,10 @@
             <span class="ml-3">Pengaturan</span>
         </x-link-item>
     </li> --}}
-    <li>
+    {{-- <li>
         <x-link-item :href="route('pengajar.user.index', ['unit' => $unit])" :active="request()->routeIs('pengajar.user.index', ['unit' => $unit])">
             @svg('carbon-user-profile-alt', 'text-gray-600 h-6 w-6')
             <span class="ml-3">User Akun</span>
         </x-link-item>
-    </li>
+    </li> --}}
 </ul>

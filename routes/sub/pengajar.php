@@ -4,17 +4,22 @@ use App\Http\Controllers\Dashboard\Pengajar\DashboardController;
 use App\Http\Controllers\Dashboard\Pengajar\PembelajaranController;
 use App\Http\Controllers\Dashboard\Pengajar\PengajarController;
 use App\Http\Controllers\Dashboard\Pengajar\PesertaController;
-use App\Http\Controllers\Dashboard\Pengajar\UserController;
+use App\Http\Controllers\Dashboard\Pengajar\JadwalController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('/pengajar/{unit}')->middleware('role:mia-pengajar')->group(function () {
     Route::get('/', [DashboardController::class, 'dashboard'])->name('pengajar.dashboard');
 
-
     Route::get('/pembelajaran', [PembelajaranController::class, 'index'])->name('pengajar.pembelajaran.index');
+    // Route::get('/pembelajaran/create', [PembelajaranController::class, 'create'])->name('pengajar.pembelajaran.create');
+    // Route::post('/pembelajaran', [PembelajaranController::class, 'store'])->name('pengajar.pembelajaran.store');
+    // Route::get('/pembelajaran/{pembelajaran}', [PembelajaranController::class, 'show'])->name('pengajar.pembelajaran.show');
+    // Route::get('/pembelajaran/{pembelajaran}/edit', [PembelajaranController::class, 'edit'])->name('pengajar.pembelajaran.edit');
+    // Route::put('/pembelajaran/{pembelajaran}', [PembelajaranController::class, 'update'])->name('pengajar.pembelajaran.update');
+    // Route::delete('/pembelajaran/{pembelajaran}', [PembelajaranController::class, 'destroy'])->name('pengajar.pembelajaran.destroy');
 
 
-    // Route::get('/jadwal', [JadwalController::class, 'index'])->name('pengajar.jadwal.index');
+    Route::get('/jadwal', [JadwalController::class, 'index'])->name('pengajar.jadwal.index');
     // Route::get('/jadwal/create', [JadwalController::class, 'create'])->name('pengajar.jadwal.create');
     // Route::post('/jadwal', [JadwalController::class, 'store'])->name('pengajar.jadwal.store');
     // Route::get('/jadwal/{jadwal}', [JadwalController::class, 'show'])->name('pengajar.jadwal.show');
@@ -46,16 +51,4 @@ Route::prefix('/pengajar/{unit}')->middleware('role:mia-pengajar')->group(functi
     // Route::put('/pengaturan/{pengaturan}', [PengaturanController::class, 'update'])->name('pengajar.pengaturan.update');
     // Route::delete('/pengaturan/{pengaturan}', [PengaturanController::class, 'destroy'])->name('pengajar.pengaturan.destroy');
 
-    Route::get('/user', [UserController::class, 'index'])->name('pengajar.user.index');
-    // Route::get('/user/create', [UserController::class, 'create'])->name('pengajar.user.create');
-    // Route::post('/user', [UserController::class, 'store'])->name('pengajar.user.store');
-    // Route::get('/user/{id}', [UserController::class, 'show'])->name('pengajar.user.show');
-    // Route::put('/user/{id}', [UserController::class, 'update'])->name('pengajar.user.update');
-    // Route::get('/user/{id}/password', [UserController::class, 'password'])->name('pengajar.user.password');
-    // Route::put('/user/{id}/password', [UserController::class, 'password_update'])->name('pengajar.user.password.update');
-    // Route::delete('/user/{id}', [UserController::class, 'destroy'])->name('pengajar.user.destroy');
-
-    // Route::get('/pembayaran/', function () {
-    //     return view('dashboard.pengajar.pembayaran');
-    // })->name('dashboard.pengajar.pembayaran');
 });
