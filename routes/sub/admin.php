@@ -6,6 +6,7 @@ use App\Http\Controllers\Dashboard\Admin\PembelajaranController;
 use App\Http\Controllers\Dashboard\Admin\PengajarController;
 use App\Http\Controllers\Dashboard\Admin\PesertaController;
 use App\Http\Controllers\Dashboard\Admin\PembayaranController;
+use App\Http\Controllers\Dashboard\Admin\JadwalController;
 use App\Http\Controllers\Dashboard\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -13,17 +14,22 @@ Route::prefix('/admin/{unit}')->middleware('role:mia-admin')->group(function () 
     Route::get('/', [DashboardController::class, 'dashboard'])->name('admin.dashboard');
 
     Route::get('/periode', [PeriodeController::class, 'index'])->name('admin.periode.index');
-    // Route::get('/periode/create', [PeriodeController::class, 'create'])->name('admin.periode.create');
-    // Route::post('/periode', [PeriodeController::class, 'store'])->name('admin.periode.store');
-    // Route::get('/periode/{periode}', [PeriodeController::class, 'show'])->name('admin.periode.show');
-    // Route::get('/periode/{periode}/edit', [PeriodeController::class, 'edit'])->name('admin.periode.edit');
-    // Route::put('/periode/{periode}', [PeriodeController::class, 'update'])->name('admin.periode.update');
-    // Route::delete('/periode/{periode}', [PeriodeController::class, 'destroy'])->name('admin.periode.destroy');
+    Route::get('/periode/create', [PeriodeController::class, 'create'])->name('admin.periode.create');
+    Route::post('/periode', [PeriodeController::class, 'store'])->name('admin.periode.store');
+    Route::get('/periode/{periode}', [PeriodeController::class, 'show'])->name('admin.periode.show');
+    Route::get('/periode/{periode}/edit', [PeriodeController::class, 'edit'])->name('admin.periode.edit');
+    Route::put('/periode/{periode}', [PeriodeController::class, 'update'])->name('admin.periode.update');
+    Route::delete('/periode/{periode}', [PeriodeController::class, 'destroy'])->name('admin.periode.destroy');
 
     Route::get('/pembelajaran', [PembelajaranController::class, 'index'])->name('admin.pembelajaran.index');
+    Route::get('/pembelajaran/create', [PembelajaranController::class, 'create'])->name('admin.pembelajaran.create');
+    Route::post('/pembelajaran/store', [PembelajaranController::class, 'store'])->name('admin.pembelajaran.store');
+    Route::get('/pembelajaran/{pembelajaran}', [PembelajaranController::class, 'show'])->name('admin.pembelajaran.show');
+    Route::put('/pembelajaran/{pembelajaran}', [PembelajaranController::class, 'update'])->name('admin.pembelajaran.update');
+    Route::delete('/pembelajaran/{pembelajaran}', [PembelajaranController::class, 'destroy'])->name('admin.pembelajaran.destroy');
 
 
-    // Route::get('/jadwal', [JadwalController::class, 'index'])->name('admin.jadwal.index');
+    Route::get('/jadwal', [JadwalController::class, 'index'])->name('admin.jadwal.index');
     // Route::get('/jadwal/create', [JadwalController::class, 'create'])->name('admin.jadwal.create');
     // Route::post('/jadwal', [JadwalController::class, 'store'])->name('admin.jadwal.store');
     // Route::get('/jadwal/{jadwal}', [JadwalController::class, 'show'])->name('admin.jadwal.show');
@@ -48,6 +54,8 @@ Route::prefix('/admin/{unit}')->middleware('role:mia-admin')->group(function () 
     // Route::delete('/peserta/{peserta}', [PesertaController::class, 'destroy'])->name('admin.peserta.destroy');
 
     Route::get('/pembayaran', [PembayaranController::class, 'index'])->name('admin.pembayaran.index');
+    Route::get('/pembayaran/rekap', [PembayaranController::class, 'rekap'])->name('admin.pembayaran.rekap');
+    Route::get('/pembayaran/transaksi', [PembayaranController::class, 'transaksi'])->name('admin.pembayaran.transaksi');
     // Route::get('/pembayaran/create', [PembayaranController::class, 'create'])->name('admin.pembayaran.create');
     // Route::post('/pembayaran', [PembayaranController::class, 'store'])->name('admin.pembayaran.store');
     // Route::get('/pembayaran/{pembayaran}', [PembayaranController::class, 'show'])->name('admin.pembayaran.show');
@@ -82,7 +90,7 @@ Route::prefix('/admin/{unit}')->middleware('role:mia-admin')->group(function () 
     Route::get('/user', [UserController::class, 'index'])->name('admin.user.index');
     // Route::get('/user/create', [UserController::class, 'create'])->name('admin.user.create');
     // Route::post('/user', [UserController::class, 'store'])->name('admin.user.store');
-    // Route::get('/user/{id}', [UserController::class, 'show'])->name('admin.user.show');
+    Route::get('/user/{id}', [UserController::class, 'show'])->name('admin.user.show');
     // Route::put('/user/{id}', [UserController::class, 'update'])->name('admin.user.update');
     // Route::get('/user/{id}/password', [UserController::class, 'password'])->name('admin.user.password');
     // Route::put('/user/{id}/password', [UserController::class, 'password_update'])->name('admin.user.password.update');

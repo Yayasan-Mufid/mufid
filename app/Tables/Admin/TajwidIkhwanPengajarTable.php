@@ -2,12 +2,12 @@
 
 namespace App\Tables\Admin;
 
-use App\Models\Periode;
+use App\Models\Pengajar;
 use Illuminate\Http\Request;
 use ProtoneMedia\Splade\AbstractTable;
 use ProtoneMedia\Splade\SpladeTable;
 
-class TajwidAkhwatPeriodeTable extends AbstractTable
+class TajwidIkhwanPengajarTable extends AbstractTable
 {
     /**
      * Create a new instance.
@@ -36,7 +36,7 @@ class TajwidAkhwatPeriodeTable extends AbstractTable
      */
     public function for()
     {
-        return Periode::where('unit_id', 3)->orderBy('created_at', 'desc');
+        return Pengajar::where('unit_id', 2)->orderBy('created_at', 'desc');
     }
 
     /**
@@ -48,26 +48,14 @@ class TajwidAkhwatPeriodeTable extends AbstractTable
     public function configure(SpladeTable $table)
     {
         $table
-        ->withGlobalSearch(columns: ['nama'])
-        ->rowLink(fn (Periode $periode) => route('admin.periode.show', ['unit' => 'tajwid-akhwat', 'periode' => $periode->id],$periode))
-        ->column('id', sortable: true)
-        ->column('nama')
-        ->column('tahun_ajaran')
-        ->column(
-            label:'Buka Pendaftaran',
-            key:'waktu_start'
-        )
-        ->column(
-                label:'Tutup Pendaftaran',
-                key:'waktu_end'
-        )
+            ->withGlobalSearch(columns: ['id'])
+            ->column('id', sortable: true);
 
-        // ->searchInput()
-        // ->selectFilter()
-        // ->withGlobalSearch()
+            // ->searchInput()
+            // ->selectFilter()
+            // ->withGlobalSearch()
 
-        // ->bulkAction()
-        // ->export()
-        ->paginate(10);
+            // ->bulkAction()
+            // ->export()
     }
 }

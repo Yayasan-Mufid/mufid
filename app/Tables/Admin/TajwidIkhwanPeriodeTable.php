@@ -49,7 +49,7 @@ class TajwidIkhwanPeriodeTable extends AbstractTable
     {
         $table
         ->withGlobalSearch(columns: ['nama'])
-        ->rowLink(fn (Periode $periode) => route('admin.periode.show', ['unit' => 'mia', 'periode' => $periode->id],$periode))
+        ->rowLink(fn (Periode $periode) => route('admin.periode.show', ['unit' => 'tajwid-ikhwan', 'periode' => $periode->id],$periode))
         ->column('id', sortable: true)
         ->column('nama')
         ->column('tahun_ajaran')
