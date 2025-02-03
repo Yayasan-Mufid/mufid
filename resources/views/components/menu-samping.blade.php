@@ -31,7 +31,8 @@
         </div>
         </Link>
     </li>
-    @hasanyrole($roles)
+    @isset($roles)
+        @hasanyrole($roles)
         <li class="border-gray-200 hover:bg-gray-100">
             <Link href="{{ route('akses') }}"
                 class="flex items-center space-x-4 p-4 {{ request()->routeIs('akses') ? 'bg-slate-50 text-primary-600' : '' }}">
@@ -43,7 +44,8 @@
             </div>
             </Link>
         </li>
-    @endhasanyrole
+        @endhasanyrole
+    @endisset
     <li class="py-5"></li>
     <li class="border-b border-gray-200 hover:bg-gray-100">
         <Link href="{{ route('profile.edit') }}"
