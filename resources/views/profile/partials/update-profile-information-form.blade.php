@@ -1,16 +1,16 @@
 <section>
     <header>
         <h2 class="text-lg font-medium text-gray-900">
-            {{ __('Profile Information') }}
+            {{ __('Informasi Akun') }}
         </h2>
 
-        <p class="mt-1 text-sm text-gray-600">
-            {{ __("Update your account's profile information and email address.") }}
-        </p>
+        {{-- <p class="mt-1 text-sm text-gray-600">
+            {{ __("Jika ingin update email. Hubungi Admin.") }}
+        </p> --}}
     </header>
 
-    <x-splade-form method="patch" :action="route('profile.update')" :default="$user" class="mt-6 space-y-6" preserve-scroll>
-        <x-splade-input id="name" name="name" type="text" :label="__('Name')" required autofocus autocomplete="name" />
+    <x-splade-form method="patch" :action="route('profile.update')" :default="$user" class="mt-6 space-y-3" preserve-scroll>
+        <x-splade-input id="name" name="name" type="text" :label="__('Nama')" required autofocus autocomplete="name" />
         <x-splade-input id="email" name="email" type="email" :label="__('Email')" required autocomplete="email" />
 
         @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())
