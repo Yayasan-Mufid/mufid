@@ -51,40 +51,6 @@
                             </li>
                         </ul>
                     </div>
-
-                    @hasanyrole($roles)
-                        <div class="flow-root">
-                            <h3 class="text-xl font-semibold ">Akses</h3>
-                            <hr>
-                            @foreach ($roleuser as  $item)
-                                <ul class=" divide-gray-200 ">
-                                    <li class="bg-slate-50 p-3 rounded-xl border my-2">
-                                        <div class="flex items-center space-x-4">
-                                            {{-- <div class="flex-shrink-0">
-                                                <img src="{{ url('/') }}/aset/img/logo-mia.png" width="40" alt="Logo M Mufid">
-                                            </div> --}}
-
-                                            <div class="flex-1 min-w-0">
-                                                <span class="block text-base font-semibold text-gray-900 truncate ">
-                                                    {{ $item['nama'] }}
-                                                </span>
-                                                <span class="block text-sm font-normal text-gray-500 truncate ">
-                                                    {{ $item['nama-unit'] }}
-                                                </span>
-                                            </div>
-                                            <div class="md:inline-flex items-center">
-                                                <a href="{{ url('/') }}{{ $item['url'] }}/{{ $item['unit'] }}" class="flex items-center px-3 py-2 gap-3 text-sm font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 ">
-                                                    <span class="hidden md:inline">Masuk</span>
-                                                    <x-carbon-arrow-right class="w-6 h-6 text-white"/>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            @endforeach
-                        </div>
-                    @endhasanyrole
-
                 </div>
             </div>
         </div>

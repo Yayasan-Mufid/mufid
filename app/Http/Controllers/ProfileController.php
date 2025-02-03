@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Spatie\Permission\Models\Role;
 use App\Models\RoleToUnit;
+use App\Rules\PhoneNumber;
+use App\Models\User;
 
 
 class ProfileController extends Controller
@@ -68,5 +70,28 @@ class ProfileController extends Controller
         $request->session()->regenerateToken();
 
         return Redirect::to('/');
+    }
+
+    public function update_phone(Request $request, $id)
+    {
+        $request->validate([
+            'phone_number' => ['required', 'min:8', 'max:15', new PhoneNumber, 'unique:'.User::class],
+            'phone_code'   => ['max:6']
+        ],[
+            'phone_number.required' => 'Nomor handphone wajib diisi!',
+            'phone_number.min' => 'Nomor handphone minimal 8 karakter!',
+            'phone_number.max' => 'Nomor handphone maksimal 15 karakter!',
+            'phone_number.unique' => 'Nomor handphone sudah  terdaftar!',
+            'phone_code.max' => 'Kode telepon maksimal 6 karakter!',
+        ]);
+
+        $user = User::findOrFail($id);
+
+        $user->update([
+            'phone_code' => $request->phone_code,
+            'phone_number' => $request->phone_number,
+        ]);
+
+        return Redirect::route('profile.edit')->with('status', 'phone-updated');
     }
 }
