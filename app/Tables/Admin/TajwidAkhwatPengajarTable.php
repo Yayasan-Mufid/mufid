@@ -49,7 +49,12 @@ class TajwidAkhwatPengajarTable extends AbstractTable
     {
         $table
             ->withGlobalSearch(columns: ['id'])
-            ->column('id', sortable: true);
+            ->column('id', sortable: true)
+            ->column(
+                key:'user.name',
+                label:'Nama',
+            )
+            ;
 
             // ->searchInput()
             // ->selectFilter()

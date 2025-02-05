@@ -2,12 +2,12 @@
 
 namespace App\Tables\Admin;
 
-use App\Models\Pengajar;
+use App\Models\Level;
 use Illuminate\Http\Request;
 use ProtoneMedia\Splade\AbstractTable;
 use ProtoneMedia\Splade\SpladeTable;
 
-class TajwidIkhwanPengajarTable extends AbstractTable
+class MiaLevelTable extends AbstractTable
 {
     /**
      * Create a new instance.
@@ -36,7 +36,7 @@ class TajwidIkhwanPengajarTable extends AbstractTable
      */
     public function for()
     {
-        return Pengajar::where('unit_id', 2)->orderBy('created_at', 'desc');
+        return Level::where('unit_id', 1)->orderBy('created_at', 'desc');
     }
 
     /**
@@ -49,10 +49,10 @@ class TajwidIkhwanPengajarTable extends AbstractTable
     {
         $table
             ->withGlobalSearch(columns: ['id'])
-            ->column('id', sortable: true)
+            ->column('nama')
             ->column(
-                key:'user.name',
-                label:'Nama',
+                key:'unit.nama',
+                label:'Program',
             )
             ;
 

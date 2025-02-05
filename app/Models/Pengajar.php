@@ -11,6 +11,7 @@ class Pengajar extends Model
 
     protected $fillable = [
         'user_id',
+        'unit_id',
         'kode_pengajar',
         'slug',
         'tanggal_masuk',
