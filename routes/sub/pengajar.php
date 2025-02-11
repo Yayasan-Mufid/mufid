@@ -22,7 +22,9 @@ Route::prefix('/pengajar/{unit}')->middleware('role:mia-pengajar')->group(functi
     Route::get('/jadwal', [JadwalController::class, 'index'])->name('pengajar.jadwal.index');
     // Route::get('/jadwal/create', [JadwalController::class, 'create'])->name('pengajar.jadwal.create');
     // Route::post('/jadwal', [JadwalController::class, 'store'])->name('pengajar.jadwal.store');
-    // Route::get('/jadwal/{jadwal}', [JadwalController::class, 'show'])->name('pengajar.jadwal.show');
+    Route::get('/jadwal/{jadwal}', [JadwalController::class, 'show'])->name('pengajar.jadwal.show');
+    Route::get('/jadwal/{jadwal}/absensi', [JadwalController::class, 'absensi'])->name('pengajar.jadwal.absensi');
+    Route::post('/jadwal/{jadwal}/absensi/{absenke}', [JadwalController::class, 'absensi_update'])->name('pengajar.jadwal.absensi.update');
     // Route::get('/jadwal/{jadwal}/edit', [JadwalController::class, 'edit'])->name('pengajar.jadwal.edit');
     // Route::put('/jadwal/{jadwal}', [JadwalController::class, 'update'])->name('pengajar.jadwal.update');
     // Route::delete('/jadwal/{jadwal}', [JadwalController::class, 'destroy'])->name('pengajar.jadwal.destroy');

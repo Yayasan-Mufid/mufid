@@ -4,6 +4,7 @@ use App\Http\Controllers\Dashboard\Admin\DashboardController;
 use App\Http\Controllers\Dashboard\Admin\PeriodeController;
 use App\Http\Controllers\Dashboard\Admin\PembelajaranController;
 use App\Http\Controllers\Dashboard\Admin\PengajarController;
+use App\Http\Controllers\Dashboard\Admin\LevelController;
 use App\Http\Controllers\Dashboard\Admin\PesertaController;
 use App\Http\Controllers\Dashboard\Admin\PembayaranController;
 use App\Http\Controllers\Dashboard\Admin\JadwalController;
@@ -28,18 +29,24 @@ Route::prefix('/admin/{unit}')->middleware('role:mia-admin')->group(function () 
     Route::put('/pembelajaran/{pembelajaran}', [PembelajaranController::class, 'update'])->name('admin.pembelajaran.update');
     Route::delete('/pembelajaran/{pembelajaran}', [PembelajaranController::class, 'destroy'])->name('admin.pembelajaran.destroy');
 
+    Route::get('/level', [LevelController::class, 'index'])->name('admin.level.index');
+    Route::get('/level/create', [LevelController::class, 'create'])->name('admin.level.create');
+    Route::post('/level', [LevelController::class, 'store'])->name('admin.level.store');
+
 
     Route::get('/jadwal', [JadwalController::class, 'index'])->name('admin.jadwal.index');
-    // Route::get('/jadwal/create', [JadwalController::class, 'create'])->name('admin.jadwal.create');
-    // Route::post('/jadwal', [JadwalController::class, 'store'])->name('admin.jadwal.store');
-    // Route::get('/jadwal/{jadwal}', [JadwalController::class, 'show'])->name('admin.jadwal.show');
-    // Route::get('/jadwal/{jadwal}/edit', [JadwalController::class, 'edit'])->name('admin.jadwal.edit');
-    // Route::put('/jadwal/{jadwal}', [JadwalController::class, 'update'])->name('admin.jadwal.update');
-    // Route::delete('/jadwal/{jadwal}', [JadwalController::class, 'destroy'])->name('admin.jadwal.destroy');
+    Route::get('/jadwal/create', [JadwalController::class, 'create'])->name('admin.jadwal.create');
+    Route::post('/jadwal', [JadwalController::class, 'store'])->name('admin.jadwal.store');
+    Route::get('/jadwal/{jadwal}', [JadwalController::class, 'show'])->name('admin.jadwal.show');
+    Route::get('/jadwal/{jadwal}/import', [JadwalController::class, 'import'])->name('admin.jadwal.import');
+    Route::post('/jadwal/{jadwal}/import/store', [JadwalController::class, 'importStore'])->name('admin.jadwal.import.store');
+    Route::get('/jadwal/{jadwal}/edit', [JadwalController::class, 'edit'])->name('admin.jadwal.edit');
+    Route::put('/jadwal/{jadwal}', [JadwalController::class, 'update'])->name('admin.jadwal.update');
+    Route::delete('/jadwal/{jadwal}', [JadwalController::class, 'destroy'])->name('admin.jadwal.destroy');
 
     Route::get('/pengajar', [PengajarController::class, 'index'])->name('admin.pengajar.index');
-    // Route::get('/pengajar/create', [PengajarController::class, 'create'])->name('admin.pengajar.create');
-    // Route::post('/pengajar', [PengajarController::class, 'store'])->name('admin.pengajar.store');
+    Route::get('/pengajar/create', [PengajarController::class, 'create'])->name('admin.pengajar.create');
+    Route::post('/pengajar', [PengajarController::class, 'store'])->name('admin.pengajar.store');
     // Route::get('/pengajar/{pengajar}', [PengajarController::class, 'show'])->name('admin.pengajar.show');
     // Route::get('/pengajar/{pengajar}/edit', [PengajarController::class, 'edit'])->name('admin.pengajar.edit');
     // Route::put('/pengajar/{pengajar}', [PengajarController::class, 'update'])->name('admin.pengajar.update');
@@ -48,7 +55,7 @@ Route::prefix('/admin/{unit}')->middleware('role:mia-admin')->group(function () 
     Route::get('/peserta', [PesertaController::class, 'index'])->name('admin.peserta.index');
     // Route::get('/peserta/create', [PesertaController::class, 'create'])->name('admin.peserta.create');
     // Route::post('/peserta', [PesertaController::class, 'store'])->name('admin.peserta.store');
-    // Route::get('/peserta/{peserta}', [PesertaController::class, 'show'])->name('admin.peserta.show');
+    Route::get('/peserta/{peserta}', [PesertaController::class, 'show'])->name('admin.peserta.show');
     // Route::get('/peserta/{peserta}/edit', [PesertaController::class, 'edit'])->name('admin.peserta.edit');
     // Route::put('/peserta/{peserta}', [PesertaController::class, 'update'])->name('admin.peserta.update');
     // Route::delete('/peserta/{peserta}', [PesertaController::class, 'destroy'])->name('admin.peserta.destroy');
@@ -56,6 +63,7 @@ Route::prefix('/admin/{unit}')->middleware('role:mia-admin')->group(function () 
     Route::get('/pembayaran', [PembayaranController::class, 'index'])->name('admin.pembayaran.index');
     Route::get('/pembayaran/rekap', [PembayaranController::class, 'rekap'])->name('admin.pembayaran.rekap');
     Route::get('/pembayaran/transaksi', [PembayaranController::class, 'transaksi'])->name('admin.pembayaran.transaksi');
+    Route::get('/pembayaran/peserta/{peserta}', [PembayaranController::class, 'peserta'])->name('admin.pembayaran.peserta');
     // Route::get('/pembayaran/create', [PembayaranController::class, 'create'])->name('admin.pembayaran.create');
     // Route::post('/pembayaran', [PembayaranController::class, 'store'])->name('admin.pembayaran.store');
     // Route::get('/pembayaran/{pembayaran}', [PembayaranController::class, 'show'])->name('admin.pembayaran.show');
