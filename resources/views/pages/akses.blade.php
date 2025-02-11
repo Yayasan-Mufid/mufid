@@ -12,6 +12,7 @@
                     @include('components.menu-samping')
                 </div>
                 <div class="md:basis-3/4 border p-6 bg-white border-gray-200 rounded-xl">
+                    @isset($roles)
                     @hasanyrole($roles)
                         <div class="flow-root">
                             <h3 class="text-xl font-semibold ">Akses</h3>
@@ -28,13 +29,13 @@
                                                 <span class="block text-base font-semibold text-gray-900 truncate ">
                                                     {{ $item['nama'] }}
                                                 </span>
-                                                <span class="block text-sm font-normal text-primary-500 truncate ">
+                                                <span class="block text-sm font-normal text-primary-500 truncate uppercase">
                                                     {{ $item['nama-unit'] }}
                                                 </span>
                                             </div>
                                             <div class="md:inline-flex items-center">
                                                 <a href="{{ url('/') }}{{ $item['url'] }}/{{ $item['unit'] }}" class="flex items-center px-3 py-2 gap-3 text-sm font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 ">
-                                                    <span class="hidden md:inline">Masuk</span>
+                                                    <span class="hidden md:inline">Dashboard</span>
                                                     <x-carbon-arrow-right class="w-6 h-6 text-white"/>
                                                 </a>
                                             </div>
@@ -44,6 +45,7 @@
                             @endforeach
                         </div>
                     @endhasanyrole
+                    @endisset
 
                 </div>
             </div>
