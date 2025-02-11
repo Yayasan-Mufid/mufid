@@ -4,7 +4,7 @@
     "description": "Sistem Penunjang Yayasan Muflih Untuk Islam dan Dakwah.",
     "keywords": ["LMS", "ERP", "Sistem Manajemen Dakwah"],
     "license": "EULA",
-    "version": "0.5.2-12",
+    "version": "0.2.12",
     "require": {
         "php": "^8.2",
         "blade-ui-kit/blade-ui-kit": "^0.6.2",
