@@ -27,4 +27,10 @@ class Pengajar extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function unit()
+    {
+        return $this->belongsTo(Unit::class, 'unit_id');
+    }
+
+
 }

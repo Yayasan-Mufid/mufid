@@ -61,4 +61,27 @@ class Kelas extends Model
     {
         return $this->belongsTo(Jadwal::class);
     }
+
+/**
+ * Get the transaksi associated with the kelas.
+ */
+    public function transaksi()
+    {
+        return $this->hasOne(Transaksi::class);
+    }
+
+/**
+ * Get the related kelas instances with the value from data_absensi and fetch the 'pendaftaran' key from data_pembayaran.
+ *
+ * @return \Illuminate\Database\Eloquent\Collection
+ */
+    public function nominal_pendaftaran() { return $this->belongsTo(Kelas::class, 'id'); }
+    public function nominal_spp1() { return $this->belongsTo(Kelas::class, 'id'); }
+    public function nominal_spp2() { return $this->belongsTo(Kelas::class, 'id'); }
+    public function nominal_spp3() { return $this->belongsTo(Kelas::class, 'id'); }
+    public function nominal_spp4() { return $this->belongsTo(Kelas::class, 'id'); }
+    public function nominal_total() { return $this->belongsTo(Kelas::class, 'id'); }
+    public function status_transaksi() { return $this->belongsTo(Kelas::class, 'id'); }
+
+
 }

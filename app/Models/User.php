@@ -49,4 +49,15 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+
+    /**
+     * Get the pengajar that owns the User
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function pengajar()
+    {
+        return $this->hasOne(Pengajar::class, 'user_id');
+    }
 }

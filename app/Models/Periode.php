@@ -32,4 +32,10 @@ class Periode extends Model
     {
         return $this->belongsTo(Unit::class);
     }
+
+
+    public function jadwal()
+    {
+        return $this->hasOne(Jadwal::class);
+    }
 }

@@ -10,16 +10,17 @@ class Peserta extends Model
     use HasFactory;
 
     protected $fillable = [
-      'uuid',
-      'periode_id',
-      'user_id',
-      'nis_peserta',
-      'nama',
-      'phone_number',
-      'biodata',
-      'foto',
-      'tanggal_lahir',
-      'jenis_peserta',
+        'uuid',
+        'periode_id',
+        'unit_id',
+        'user_id',
+        'nis_peserta',
+        'nama',
+        'phone_number',
+        'biodata',
+        'foto',
+        'tanggal_lahir',
+        'jenis_peserta',
     ];
 
     /**
@@ -46,4 +47,31 @@ class Peserta extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+
+    /**
+     * Get the kelas associated with the peserta.
+     */
+    public function kelas()
+    {
+        return $this->hasOne(Kelas::class);
+    }
+
+
+    /**
+     * Get the unit associated with the peserta.
+     */
+    public function unit()
+    {
+        return $this->belongsTo(Unit::class);
+    }
+
+    /**
+     * Get the transaksi associated with the peserta.
+     */
+    public function transaksi()
+    {
+        return $this->hasMany(Transaksi::class);
+    }
+
 }

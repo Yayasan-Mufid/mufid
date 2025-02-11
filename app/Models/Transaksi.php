@@ -11,7 +11,7 @@ class Transaksi extends Model
     protected $fillable = [
       'uuid',
       'periode_id',
-      'jadwal_id',
+      'kelas_id',
       'peserta_id',
       'user_id',
       'status',
@@ -29,6 +29,7 @@ class Transaksi extends Model
      */
     protected $casts = [
         'detail_pembayaran' => 'array',
+        // 'status' => 'enum:MENUNGGU PEMBAYARAN,MENUNGGU KONFIRMASI,LUNAS,KADALUARSA',
     ];
 
     /**
@@ -39,9 +40,9 @@ class Transaksi extends Model
         return $this->belongsTo(Periode::class);
     }
 
-    public function jadwal()
+    public function kelas()
     {
-        return $this->belongsTo(Jadwal::class);
+        return $this->belongsTo(Kelas::class);
     }
 
     /**
@@ -59,4 +60,18 @@ class Transaksi extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+/**
+ * Get the unit associated with the transaksi.
+ */
+    public function unit()
+    {
+        return $this->belongsTo(Unit::class);
+    }
+
+
+
+    public function fun_nominal_total() { return $this->belongsTo(Transaksi::class, 'id'); }
+    public function fun_nominal_total_pembayaran() { return $this->belongsTo(Transaksi::class, 'id'); }
+
 }
