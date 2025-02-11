@@ -4,15 +4,20 @@
     "description": "Sistem Penunjang Yayasan Muflih Untuk Islam dan Dakwah.",
     "keywords": ["LMS", "ERP", "Sistem Manajemen Dakwah"],
     "license": "EULA",
+    "version": "0.5.2-12",
     "require": {
         "php": "^8.2",
         "blade-ui-kit/blade-ui-kit": "^0.6.2",
         "codeat3/blade-carbon-icons": "^2.27",
+        "flowframe/laravel-trend": "^0.3.0",
+        "kirschbaum-development/eloquent-power-joins": "^4.0",
         "laravel/framework": "^11.9",
         "laravel/socialite": "^5.15",
         "laravel/tinker": "^2.9",
+        "maatwebsite/excel": "^3.1",
         "protonemedia/laravel-splade": "^1.4",
-        "protonemedia/laravel-splade-breeze": "^2.5"
+        "protonemedia/laravel-splade-breeze": "^2.5",
+        "spatie/laravel-permission": "^6.10"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",

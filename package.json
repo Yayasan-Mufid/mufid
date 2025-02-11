@@ -18,5 +18,14 @@
         "tailwindcss": "^3.4.4",
         "vite": "^5.0",
         "vue": "^3.4"
+    },
+    "dependencies": {
+        "apexcharts": "^4.4.0",
+        "caniuse-lite": "^1.0.30001698",
+        "filepond": "^4.32.7",
+        "filepond-plugin-file-encode": "^2.1.14",
+        "filepond-plugin-image-preview": "^4.6.12",
+        "filepond-plugin-image-resize": "^2.0.10",
+        "vue-filepond": "^7.0.4"
     }
 }
