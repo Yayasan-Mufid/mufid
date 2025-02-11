@@ -41,6 +41,11 @@
                             @endforeach
                         </ul>
                     </div>
+                    <div class="flow-root pb-4">
+                        <div class="flex justify-end">
+                            {{ $data_peserta->links() }}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
