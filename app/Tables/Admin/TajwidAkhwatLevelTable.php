@@ -54,6 +54,8 @@ class TajwidAkhwatLevelTable extends AbstractTable
                 key:'unit.nama',
                 label:'Program',
             )
+        ->paginate(15)
+
             ;
 
             // ->searchInput()

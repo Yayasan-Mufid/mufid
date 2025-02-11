@@ -49,7 +49,7 @@ class TajwidAkhwatUserTable extends AbstractTable
     {
         $table->withGlobalSearch(columns:['name', 'email','phone_number'])
 
-        ->rowLink(fn (User $user) => route('admin.user.show', ['unit' => 3, 'id' => $user->id],$user))
+        ->rowLink(fn (User $user) => route('admin.user.show', ['unit' => 'tajwid-akhwat', 'id' => $user->id],$user))
         // ->export()
         ->column('phone_number')
         ->column('name')

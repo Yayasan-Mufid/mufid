@@ -51,7 +51,9 @@ class MiaJadwalTable extends AbstractTable
     {
         $table
             ->withGlobalSearch(columns: ['id'])
-            ->column('id', sortable: true);
+            ->column('id', sortable: true)
+            ->paginate(15)
+            ;
 
             // ->searchInput()
             // ->selectFilter()

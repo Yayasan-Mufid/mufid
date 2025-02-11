@@ -48,14 +48,23 @@ class MiaPesertaTable extends AbstractTable
     public function configure(SpladeTable $table)
     {
         $table
-            ->withGlobalSearch(columns: ['id'])
-            ->column('id', sortable: true);
+            ->withGlobalSearch(columns: ['peserta.nama', 'jadwal.nama'])
+            ->column(label: 'Angkatan', key: 'periode.angkatan', sortable: true)
+            ->column(label: 'Jadwal', key: 'jadwal.nama_jadwal', sortable: true)
+            ->column(label: 'Pengajar', key: 'jadwal.pengajar.user.name', sortable: true)
+            ->column(label: 'Peserta', key: 'peserta.nama', sortable: true)
+            ->column(label: 'Nomor HP', key: 'peserta.phone_number')
+            ->column(label: 'Status Penerimaan', key: 'status_penerimaan')
+            ->column(label: 'Status Aktif', key: 'status_aktif')
 
             // ->searchInput()
             // ->selectFilter()
             // ->withGlobalSearch()
 
             // ->bulkAction()
-            // ->export()
+        ->paginate(15)
+
+            ->export()
+            ;
     }
 }

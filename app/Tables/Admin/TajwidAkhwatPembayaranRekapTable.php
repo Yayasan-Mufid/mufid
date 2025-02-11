@@ -2,7 +2,7 @@
 
 namespace App\Tables\Admin;
 
-use App\Models\Transaksi;
+use App\Models\Kelas;
 use Illuminate\Http\Request;
 use ProtoneMedia\Splade\AbstractTable;
 use ProtoneMedia\Splade\SpladeTable;
@@ -36,7 +36,7 @@ class TajwidAkhwatPembayaranRekapTable extends AbstractTable
      */
     public function for()
     {
-        return Transaksi::whereHas('periode.unit', function ($query) {
+        return Kelas::whereHas('periode.unit', function ($query) {
             $query->where('id', 3);
         })->orderBy('created_at', 'desc');
     }
@@ -50,14 +50,36 @@ class TajwidAkhwatPembayaranRekapTable extends AbstractTable
     public function configure(SpladeTable $table)
     {
         $table
-            ->withGlobalSearch(columns: ['id'])
-            ->column('id', sortable: true);
+        ->withGlobalSearch(columns: ['peserta.nama'])
+            ->rowLink(fn (Kelas $kelas) => route('admin.pembayaran.peserta', ['unit' => 'tajwid-akhwat', 'peserta' => $kelas->peserta->id],$kelas))
+            ->column(label: 'Angkatan', key: 'periode.angkatan', sortable: true)
+            ->column(label: 'Peserta', key: 'peserta.nama', sortable: true)
+            ->column(label: 'Nomor HP', key: 'peserta.phone_number')
+            ->column(label: 'Pendaftaran', key: 'nominal_pendaftaran', as: fn(Kelas $kelas = null) => 'Rp ' . number_format($kelas?->data_pembayaran['pendaftaran'] ?? 0, 0, ',', '.'), )
+            ->column(label: 'SPP 1', key: 'nominal_spp1', as: fn(Kelas $kelas = null) => 'Rp ' . number_format($kelas?->data_pembayaran['spp1'] ?? 0, 0, ',', '.'), )
+            ->column(label: 'SPP 2', key: 'nominal_spp2', as: fn(Kelas $kelas = null) => 'Rp ' . number_format($kelas?->data_pembayaran['spp2'] ?? 0, 0, ',', '.'), )
+            ->column(label: 'SPP 3', key: 'nominal_spp3', as: fn(Kelas $kelas = null) => 'Rp ' . number_format($kelas?->data_pembayaran['spp3'] ?? 0, 0, ',', '.'), )
+            ->column(label: 'SPP 4', key: 'nominal_spp4', as: fn(Kelas $kelas = null) => 'Rp ' . number_format($kelas?->data_pembayaran['spp4'] ?? 0, 0, ',', '.'), )
+            ->column(label: 'TOTAL', key: 'nominal_total', as: fn(Kelas $kelas = null) =>
+                'Rp ' . number_format(
+                    ($kelas?->data_pembayaran['pendaftaran'] ?? 0) +
+                    ($kelas?->data_pembayaran['spp1'] ?? 0) +
+                    ($kelas?->data_pembayaran['spp2'] ?? 0) +
+                    ($kelas?->data_pembayaran['spp3'] ?? 0) +
+                    ($kelas?->data_pembayaran['spp4'] ?? 0),
+                    0, ',', '.'
+                )
+            )
+
 
             // ->searchInput()
             // ->selectFilter()
             // ->withGlobalSearch()
 
             // ->bulkAction()
-            // ->export()
+            ->paginate(15)
+
+            ->export()
+            ;
     }
 }

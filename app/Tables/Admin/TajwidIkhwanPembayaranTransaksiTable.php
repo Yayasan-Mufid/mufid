@@ -50,14 +50,36 @@ class TajwidIkhwanPembayaranTransaksiTable extends AbstractTable
     public function configure(SpladeTable $table)
     {
         $table
-            ->withGlobalSearch(columns: ['id'])
-            ->column('id', sortable: true);
+            ->withGlobalSearch(columns: ['peserta.nama'])
+            // ->searchInput(
+            //     key: 'peserta.nama',
+            //     label: 'Cari Nama',
+            // )
+            // ->rowLink(fn (Transaksi $transaksi) => route('admin.pembayaran.peserta', ['unit' => 'tajwid-ikhwan', 'peserta' => $transaksi->peserta->id],$transaksi))
+            ->column(label: 'Actions')
+            ->column(label: 'Peserta', key: 'peserta.nama')
+            ->column(label: 'Nomor HP', key: 'peserta.phone_number')
+            ->column(label: 'Status', key: 'status')
+            ->column(label: 'Kode Unik', key: 'kode_unik')
+            ->column(label: 'Nominal', key: 'fun_nominal_total', as: function (Transaksi $transaksi = null) {
+                return 'Rp. ' . number_format($transaksi->nominal_total, 0, ',', '.');
+            })
+            ->column(label: 'Total', key: 'fun_nominal_total_pembayaran', as: function (Transaksi $transaksi = null) {
+                return 'Rp. ' . number_format($transaksi->nominal_total_pembayaran, 0, ',', '.');
+            })
+            ->column(label: 'Angkatan', key: 'periode.angkatan')
+            ->column(label: 'Jadwal', key: 'periode.jadwal.nama_jadwal')
+            ->column(label: 'Pengajar', key: 'periode.jadwal.pengajar.user.name')
+            ->column(label: 'Waktu', key: 'created_at')
 
             // ->searchInput()
             // ->selectFilter()
             // ->withGlobalSearch()
 
-            // ->bulkAction()
-            // ->export()
+            // ->bulkAction(label: 'Touch timestamp's,)
+            ->paginate(15)
+
+            ->export()
+            ;
     }
 }

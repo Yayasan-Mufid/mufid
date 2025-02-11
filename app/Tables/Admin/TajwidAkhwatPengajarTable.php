@@ -54,6 +54,8 @@ class TajwidAkhwatPengajarTable extends AbstractTable
                 key:'user.name',
                 label:'Nama',
             )
+        ->paginate(15)
+
             ;
 
             // ->searchInput()

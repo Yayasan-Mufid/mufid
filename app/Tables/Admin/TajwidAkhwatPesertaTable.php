@@ -2,7 +2,7 @@
 
 namespace App\Tables\Admin;
 
-use App\Models\Peserta;
+use App\Models\Kelas;
 use Illuminate\Http\Request;
 use ProtoneMedia\Splade\AbstractTable;
 use ProtoneMedia\Splade\SpladeTable;
@@ -36,7 +36,7 @@ class TajwidAkhwatPesertaTable extends AbstractTable
      */
     public function for()
     {
-        return Peserta::whereHas('periode.unit', function ($query) {
+        return Kelas::whereHas('periode.unit', function ($query) {
             $query->where('id', 3);
         })->orderBy('created_at', 'desc');
     }
@@ -50,14 +50,23 @@ class TajwidAkhwatPesertaTable extends AbstractTable
     public function configure(SpladeTable $table)
     {
         $table
-            ->withGlobalSearch(columns: ['id'])
-            ->column('id', sortable: true);
+            ->rowLink(fn (Kelas $kelas) => route('admin.pembayaran.peserta', ['unit' => 'tajwid-akhwat', 'peserta' => $kelas->peserta->id],$kelas))
+            ->column(label: 'Angkatan', key: 'periode.angkatan', sortable: true)
+            ->column(label: 'Jadwal', key: 'jadwal.nama_jadwal', sortable: true)
+            ->column(label: 'Pengajar', key: 'jadwal.pengajar.user.name', sortable: true)
+            ->column(label: 'Peserta', key: 'peserta.nama', sortable: true)
+            ->column(label: 'Nomor HP', key: 'peserta.phone_number')
+            ->column(label: 'Status Penerimaan', key: 'status_penerimaan')
+            ->column(label: 'Status Aktif', key: 'status_aktif')
 
             // ->searchInput()
             // ->selectFilter()
             // ->withGlobalSearch()
 
             // ->bulkAction()
-            // ->export()
+        ->paginate(15)
+
+            ->export()
+            ;
     }
 }

@@ -68,6 +68,6 @@ class MiaPeriodeTable extends AbstractTable
 
             // ->bulkAction()
             // ->export()
-            ->paginate(10);
+            ->paginate(15);
     }
 }

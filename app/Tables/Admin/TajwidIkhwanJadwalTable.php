@@ -37,7 +37,7 @@ class TajwidIkhwanJadwalTable extends AbstractTable
     public function for()
     {
         return Jadwal::whereHas('periode.unit', function ($query) {
-            $query->where('id', 3);
+            $query->where('id', 2);
         })->orderBy('created_at', 'desc');
     }
 
@@ -50,8 +50,29 @@ class TajwidIkhwanJadwalTable extends AbstractTable
     public function configure(SpladeTable $table)
     {
         $table
-            ->withGlobalSearch(columns: ['id'])
-            ->column('id', sortable: true);
+            ->withGlobalSearch(columns: ['nama_jadwal', 'pengajar.user.name', 'periode.angkatan', 'hari_belajar'])
+            ->rowLink(fn (Jadwal $jadwal) => route('admin.jadwal.show', ['unit' => 'tajwid-ikhwan', 'jadwal' => $jadwal->id],$jadwal))
+            ->column(
+                key:'periode.nama',
+                label:'Periode',
+            )
+            ->column(
+                key:'pengajar.user.name',
+                label:'Pengajar',
+                sortable: true
+            )
+            ->column('nama_jadwal')
+            ->column(
+                key:'level.nama',
+                label:'Level',
+                sortable: true
+            )
+            ->column('hari_belajar', sortable: true)
+            ->column('jam_mulai')
+            ->column('status_belajar', sortable: true)
+            ->paginate(15)
+
+            ;
 
             // ->searchInput()
             // ->selectFilter()
