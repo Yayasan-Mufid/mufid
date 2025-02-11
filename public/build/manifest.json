@@ -33,6 +33,12 @@
     "src": "node_modules/@protonemedia/laravel-splade/dist/CompilerErrorMessages-6b34f14b.js",
     "isDynamicEntry": true
   },
+  "node_modules/@protonemedia/laravel-splade/node_modules/filepond/dist/filepond.esm.js": {
+    "file": "assets/filepond.esm-BKI_Kz2Z.js",
+    "name": "filepond.esm",
+    "src": "node_modules/@protonemedia/laravel-splade/node_modules/filepond/dist/filepond.esm.js",
+    "isDynamicEntry": true
+  },
   "node_modules/autosize/dist/autosize.esm.js": {
     "file": "assets/autosize.esm-UHNFRGjn.js",
     "name": "autosize.esm",
@@ -57,22 +63,10 @@
     "src": "node_modules/filepond-plugin-image-exif-orientation/dist/filepond-plugin-image-exif-orientation.esm.js",
     "isDynamicEntry": true
   },
-  "node_modules/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.esm.js": {
-    "file": "assets/filepond-plugin-image-preview.esm-C5ae_mjO.js",
-    "name": "filepond-plugin-image-preview.esm",
-    "src": "node_modules/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.esm.js",
-    "isDynamicEntry": true
-  },
   "node_modules/filepond-plugin-image-validate-size/dist/filepond-plugin-image-validate-size.esm.js": {
     "file": "assets/filepond-plugin-image-validate-size.esm-BanweLWG.js",
     "name": "filepond-plugin-image-validate-size.esm",
     "src": "node_modules/filepond-plugin-image-validate-size/dist/filepond-plugin-image-validate-size.esm.js",
-    "isDynamicEntry": true
-  },
-  "node_modules/filepond/dist/filepond.esm.js": {
-    "file": "assets/filepond.esm-BKI_Kz2Z.js",
-    "name": "filepond.esm",
-    "src": "node_modules/filepond/dist/filepond.esm.js",
     "isDynamicEntry": true
   },
   "node_modules/flatpickr/dist/esm/index.js": {
@@ -82,17 +76,16 @@
     "isDynamicEntry": true
   },
   "resources/js/app.js": {
-    "file": "assets/app-B8EdOL8F.js",
+    "file": "assets/app-Bm9mdwaW.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "dynamicImports": [
       "node_modules/filepond-plugin-image-exif-orientation/dist/filepond-plugin-image-exif-orientation.esm.js",
-      "node_modules/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.esm.js",
       "node_modules/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.esm.js",
       "node_modules/filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.esm.js",
       "node_modules/filepond-plugin-image-validate-size/dist/filepond-plugin-image-validate-size.esm.js",
-      "node_modules/filepond/dist/filepond.esm.js",
+      "node_modules/@protonemedia/laravel-splade/node_modules/filepond/dist/filepond.esm.js",
       "node_modules/flatpickr/dist/esm/index.js",
       "_jodit.min-BrnkaEm1.js",
       "_choices-F57102UX.js",
@@ -103,7 +96,7 @@
       "node_modules/@protonemedia/laravel-splade/dist/CompilerErrorMessages-6b34f14b.js"
     ],
     "css": [
-      "assets/app-oO9SfWad.css"
+      "assets/app-BfcGbPFH.css"
     ]
   }
 }
