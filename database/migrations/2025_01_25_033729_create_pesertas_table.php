@@ -15,14 +15,15 @@ return new class extends Migration
             $table->id();
             $table->uuid('uuid');
             $table->foreignId('periode_id')->nullable()->constrained('periodes');
-            $table->foreignId('user_id')->constrained();
+            $table->foreignId('unit_id')->nullable()->constrained('units');
+            $table->foreignId('user_id')->nullable()->constrained();
             $table->string('nis_peserta')->unique()->nullable();
             $table->string('nama');
             $table->string('phone_number')->nullable();
             $table->json('biodata')->nullable(); // informasi peserta secara keseluruhan
             $table->string('foto')->nullable();
             $table->date('tanggal_lahir')->nullable();
-            $table->enum('jenis_peserta', ['ikhwan', 'akhwat']);
+            $table->enum('jenis_peserta', ['IKHWAN', 'AKHWAT']);
             $table->timestamps();
         });
     }

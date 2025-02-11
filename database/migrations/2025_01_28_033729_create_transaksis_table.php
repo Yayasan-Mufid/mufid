@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('transaksis', function (Blueprint $table) {
             $table->id();
             $table->uuid('uuid');
-            $table->foreignId('periode_id')->nullable()->constrained('periodes');
-            $table->foreignId('pembelajaran_id')->nullable()->constrained()->onDelete('cascade');
-            $table->foreignId('peserta_id')->constrained('pesertas');
-            $table->foreignId('user_id')->constrained('users');
-            $table->tinyInteger('status')->default(1); // 1 Menunggu Pembayaran - 2 Menunggu Konfirmasi - 3 Lunas - 4 Kadaluarsa
+            $table->foreignId('periode_id')->nullable()->constrained('periodes')->onDelete('set null');
+            $table->foreignId('kelas_id')->nullable()->constrained('kelas')->onDelete('set null');
+            $table->foreignId('peserta_id')->nullable()->constrained('pesertas')->onDelete('set null');
+            $table->foreignId('user_id')->nullable()->constrained('users')->onDelete('set null');
+            $table->string('status')->default('MENUNGGU PEMBAYARAN'); // menunggu_pembayaran - menunggu_konfirmasi - lunas - kadaluarsa
             $table->integer('kode_unik')->default(0);
             $table->integer('nominal_total')->default(0);
             $table->integer('nominal_total_pembayaran')->default(0);

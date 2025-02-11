@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('pengajars', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('periode_id')->nullable()->constrained('periodes');
-            $table->foreignId('unit_id')->nullable()->constrained('units');
+            $table->foreignId('periode_id')->nullable()->constrained('periodes')->onDelete('set null');
+            $table->foreignId('unit_id')->nullable()->constrained('units')->onDelete('set null');
             $table->foreignId('user_id')->constrained();
             $table->string('kode_pengajar')->nullable()->unique();
             $table->string('slug')->nullable()->unique();
