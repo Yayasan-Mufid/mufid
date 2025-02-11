@@ -20,6 +20,18 @@
             <span class="ml-3">Periode</span>
         </x-link-item>
     </li>
+    <li>
+        <x-link-item :href="route('admin.pengajar.index', ['unit' => $unit])" :active="request()->routeIs('admin.pengajar.index', ['unit' => $unit])">
+            @svg('carbon-user-identification', 'text-gray-600 h-6 w-6')
+            <span class="ml-3">Pengajar</span>
+        </x-link-item>
+    </li>
+    <li>
+        <x-link-item :href="route('admin.level.index', ['unit' => $unit])" :active="request()->routeIs('admin.level.index', ['unit' => $unit])">
+            @svg('carbon-increase-level', 'text-gray-600 h-6 w-6')
+            <span class="ml-3">Level</span>
+        </x-link-item>
+    </li>
     @if ($unit == 'mia')
         <li>
             <x-link-item :href="route('admin.pembelajaran.index', ['unit' => $unit])" :active="request()->routeIs('admin.pembelajaran.index', ['unit' => $unit])">
@@ -35,14 +47,6 @@
             </x-link-item>
         </li>
     @endif
-
-    <li>
-        <x-link-item :href="route('admin.pengajar.index', ['unit' => $unit])" :active="request()->routeIs('admin.pengajar.index', ['unit' => $unit])">
-            @svg('carbon-user-identification', 'text-gray-600 h-6 w-6')
-            <span class="ml-3">Pengajar</span>
-        </x-link-item>
-    </li>
-
     <li>
         <x-link-item :href="route('admin.peserta.index', ['unit' => $unit])" :active="request()->routeIs('admin.peserta.index', ['unit' => $unit])">
             @svg('carbon-events-alt', 'text-gray-600 h-6 w-6')

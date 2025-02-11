@@ -91,7 +91,7 @@
                 @role
                     <x-layouts.dashboard.sidebar.guest /> --}}
                 <div class="pt-4 space-y-2">
-                    <a href="#" target="_blank" class="flex items-center p-2 text-base text-gray-900 transition duration-75 rounded-lg hover:bg-gray-100 group hover:border hover:border-gray-500 border border-transparent">
+                    <a href="https://wa.me/628125144744?text=Bismillah. Saya dari mufid, saya butuh bantuan" target="_blank" class="flex items-center p-2 text-base text-gray-900 transition duration-75 rounded-lg hover:bg-gray-100 group hover:border hover:border-gray-500 border border-transparent">
                         @svg('carbon-information', 'text-gray-600 h-6 w-6')
                         <span class="ml-3" sidebar-toggle-item="">Bantuan</span>
                     </a>

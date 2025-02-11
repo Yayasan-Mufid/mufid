@@ -11,22 +11,22 @@
         </Link>
     </li>
     <li class="border-b border-gray-200 hover:bg-gray-100">
-        <Link href="{{ route('data') }}"
-            class="flex items-center space-x-4 p-4 {{ request()->routeIs('data') ? 'bg-slate-50 text-primary-600' : '' }}">
-        <x-carbon-data-1 class="w-6 h-6 {{ request()->routeIs('data') ? 'text-primary-600' : '' }}" />
+        <Link href="{{ route('data.index') }}"
+            class="flex items-center space-x-4 p-4 {{ request()->routeIs('data.index') ? 'bg-slate-50 text-primary-600' : '' }}">
+        <x-carbon-data-1 class="w-6 h-6 {{ request()->routeIs('data.index') ? 'text-primary-600' : '' }}" />
         <div>
-            <h6 class="text-sm font-semibold {{ request()->routeIs('data') ? 'text-primary-600' : 'text-gray-900' }}">
+            <h6 class="text-sm font-semibold {{ request()->routeIs('data.index') ? 'text-primary-600' : 'text-gray-900' }}">
                 Data</h6>
         </div>
         </Link>
     </li>
     <li class="border-b border-gray-200 hover:bg-gray-100">
-        <Link href="{{ route('pembayaran') }}"
-            class="flex items-center space-x-4 p-4 {{ request()->routeIs('pembayaran') ? 'bg-slate-50 text-primary-600' : '' }}">
-        <x-carbon-money class="w-6 h-6 {{ request()->routeIs('pembayaran') ? 'text-primary-600' : '' }}" />
+        <Link href="{{ route('pembayaran.index') }}"
+            class="flex items-center space-x-4 p-4 {{ request()->routeIs('pembayaran.index') ? 'bg-slate-50 text-primary-600' : '' }}">
+        <x-carbon-money class="w-6 h-6 {{ request()->routeIs('pembayaran.index') ? 'text-primary-600' : '' }}" />
         <div>
             <h6
-                class="text-sm font-semibold {{ request()->routeIs('pembayaran') ? 'text-primary-600' : 'text-gray-900' }}">
+                class="text-sm font-semibold {{ request()->routeIs('pembayaran.index') ? 'text-primary-600' : 'text-gray-900' }}">
                 Pembayaran</h6>
         </div>
         </Link>
