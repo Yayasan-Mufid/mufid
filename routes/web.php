@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MIA\DaftarController as MIADaftarController;
 use App\Http\Controllers\Payment\InvoiceController;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Dashboard\Peserta\DataController;
+use App\Http\Controllers\Dashboard\Peserta\PembayaranController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,13 +43,10 @@ Route::middleware('splade')->group(function () {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
         Route::get('/akses', [DashboardController::class, 'akses'])->name('akses');
 
-        Route::get('/data', function () {
-            return view('dashboard.peserta.data');
-        })->middleware(['verified'])->name('data');
+        Route::get('/data', [DataController::class, 'index'])->name('data.index');
+        Route::get('/data/{uuid}', [DataController::class, 'show'])->name('data.show');
 
-        Route::get('/pembayaran', function () {
-          return view('dashboard.peserta.pembayaran');
-        })->middleware(['verified'])->name('pembayaran');
+        Route::get('/pembayaran', [PembayaranController::class, 'index'])->name('pembayaran.index');
 
         Route::get('/kelas', function () {
           return view('dashboard.peserta.kelas');
@@ -114,7 +113,7 @@ Route::middleware('splade')->group(function () {
         require __DIR__.'/sub/admin.php';
         require __DIR__.'/sub/pengajar.php';
         // require __DIR__.'/sub/penguji.php';
-        // require __DIR__.'/sub/peserta.php';
+        require __DIR__.'/sub/peserta.php';
         // require __DIR__.'/sub/kasir.php';
         // require __DIR__.'/sub/keuangan.php';
         // require __DIR__.'/sub/pimpinan.php';
