@@ -28,12 +28,14 @@ class TajwidSeeder extends Seeder
         Role::create(['name' => 'tajwid-akhwat-pengajar']);
 
         Unit::create([
+            'id' => 2,
             'divisi_id' => 1,
             'nama' => 'Tajwid Ikhwan',
             'slug' => 'tajwid-ikhwan',
         ]);
 
         Unit::create([
+            'id' => 3,
             'divisi_id' => 1,
             'nama' => 'Tajwid Akhwat',
             'slug' => 'tajwid-akhwat',
