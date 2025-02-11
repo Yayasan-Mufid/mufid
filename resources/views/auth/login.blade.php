@@ -25,7 +25,7 @@
                   Daftar Akun
               </Link>
             </div>
-            <div class="flex items-center justify-center max-w-full">
+            {{-- <div class="flex items-center justify-center max-w-full">
                 <button
                 aria-label="Sign in with Google"
                 class="flex items-center  bg-white border border-button-border-light rounded-full p-0.5 pr-4"
@@ -54,7 +54,7 @@
                 </div>
                 <span class="text-sm text-google-text-gray tracking-wider">Log in Dengan Akun Google</span>
                 </button>
-            </div>
+            </div> --}}
         </x-splade-form>
     </x-auth-card>
 </x-guest-layout>

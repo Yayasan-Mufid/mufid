@@ -30,25 +30,27 @@
                         <h3 class="text-xl font-semibold ">Peserta</h3>
                         <hr>
                         <ul class=" divide-gray-200 ">
-                            <li class="bg-slate-50 p-3 rounded-xl border my-2">
-                                <div class="flex items-center space-x-4">
-                                    <x-carbon-user class="w-6 h-6 text-primary-600"/>
-                                    <div class="flex-1 min-w-0">
-                                        <span class="block text-base font-semibold text-gray-900 truncate ">
-                                            Muhammad Fikri
-                                        </span>
-                                        <span class="block text-sm font-normal text-gray-500 truncate ">
-                                            Peserta Mufid Islam Academy
-                                        </span>
+                            @foreach ($data_peserta as $item)
+                                <li class="bg-slate-50 p-3 rounded-xl border my-2">
+                                    <div class="flex items-center space-x-4">
+                                        <x-carbon-user class="w-6 h-6 text-primary-600"/>
+                                        <div class="flex-1 min-w-0">
+                                            <span class="block text-base font-semibold text-gray-900 truncate uppercase">
+                                                {{ $item->nama }}
+                                            </span>
+                                            <span class="block text-sm font-normal text-gray-500 truncate ">
+                                                Peserta {{ $item->periode->unit->nama }} Angkatan {{ $item->periode->angkatan }}
+                                            </span>
+                                        </div>
+                                        <div class="flow-root">
+                                            <Link modal href="{{ route('list.peserta') }}" class="flex items-center px-2 py-1 gap-3 mr-3 text-sm font-medium justify-center text-primary-800 border border-primary-800 rounded-md ">
+                                                <span class="hidden md:inline">Lihat</span>
+                                                <x-carbon-arrow-right class="w-6 h-6 text-primary-600"/>
+                                            </Link>
+                                        </div>
                                     </div>
-                                    <div class="flow-root">
-                                        <Link modal href="{{ route('list.peserta') }}" class="flex items-center px-2 py-1 gap-3 mr-3 text-sm font-medium justify-center text-primary-800 border border-primary-800 rounded-md ">
-                                            <span class="hidden md:inline">Lihat</span>
-                                            <x-carbon-arrow-right class="w-6 h-6 text-primary-600"/>
-                                        </Link>
-                                    </div>
-                                </div>
-                            </li>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
